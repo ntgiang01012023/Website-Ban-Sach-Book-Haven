@@ -83,11 +83,33 @@
                     <?php }?>
 
                     <div class="main-contact-cart">
-                        <a href="" class="tooltip-cart" data-tooltip="Cart"><i class="fa-solid fa-bag-shopping"></i></a>
+                        <a href="../pages/cart.php" class="tooltip-cart" data-tooltip="Cart"><i
+                                class="fa-solid fa-bag-shopping"></i></a>
+
+                        <?php
+    // Kiểm tra xem 'cart' đã tồn tại trong $_SESSION hay chưa
+    $totalQuantity = 0;
+    if (isset($_SESSION['cart'])) {
+        $totalQuantity = array_sum(array_column($_SESSION['cart'], 'quantity'));
+    }
+    ?>
+
                         <div class="quantity">
-                            <p>0</p>
+                            <p><?php echo $totalQuantity; ?></p>
                         </div>
-                        <p>0.00đ</p>
+
+                        <?php
+    $totalPrice = 0;
+    if (isset($_SESSION['cart'])) {
+        foreach ($_SESSION['cart'] as $item) {
+            $book_price = floatval($item['book_price']);
+            $quantity = intval($item['quantity']);
+            $subtotal = $book_price * $quantity;
+            $totalPrice += $subtotal;
+        }
+    }
+    ?>
+                        <p><?php echo number_format($totalPrice, 0, '.', ',') . 'đ'; ?></p>
                     </div>
 
                 </div>
@@ -132,7 +154,8 @@
                             <li><a class="menu-link" href="">Phương thức thanh toán</a><i
                                     class="fa-solid fa-credit-card"></i></li>
                             <li><a class="menu-link" href="">Hồ sơ cá nhân</a><i class="fa-solid fa-user"></i></li>
-                            <li id="logout-ac"><a href="">Đăng xuất</a><i class="fa-solid fa-right-from-bracket"></i>
+                            <li id="logout-ac"><a href="logout.php">Đăng xuất</a><i
+                                    class="fa-solid fa-right-from-bracket"></i>
                             </li>
                         </ul>
                     </div>

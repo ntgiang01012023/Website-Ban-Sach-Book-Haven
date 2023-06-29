@@ -95,7 +95,10 @@ if (isset($_SESSION['cart_success_message'])) {
 
                         <?php
     // Kiểm tra xem 'cart' đã tồn tại trong $_SESSION hay chưa
-    $totalQuantity = isset($_SESSION['cart']) ? array_sum(array_column($_SESSION['cart'], 'quantity')) : 0;
+    $totalQuantity = 0;
+    if (isset($_SESSION['cart'])) {
+        $totalQuantity = array_sum(array_column($_SESSION['cart'], 'quantity'));
+    }
     ?>
 
                         <div class="quantity">
@@ -103,19 +106,19 @@ if (isset($_SESSION['cart_success_message'])) {
                         </div>
 
                         <?php
-    $totalPrice = isset($_SESSION['cart']) ? array_sum(array_column($_SESSION['cart'], 'subtotal')) : 0;
-    ?>
-                        <?php
     $totalPrice = 0;
-    foreach ($_SESSION['cart'] as $item) {
-        $book_price = floatval($item['book_price']);
-        $quantity = intval($item['quantity']);
-        $subtotal = $book_price * $quantity;
-        $totalPrice += $subtotal;
+    if (isset($_SESSION['cart'])) {
+        foreach ($_SESSION['cart'] as $item) {
+            $book_price = floatval($item['book_price']);
+            $quantity = intval($item['quantity']);
+            $subtotal = $book_price * $quantity;
+            $totalPrice += $subtotal;
+        }
     }
     ?>
                         <p><?php echo number_format($totalPrice, 0, '.', ',') . 'đ'; ?></p>
                     </div>
+
 
                 </div>
 
@@ -316,7 +319,7 @@ if ($result->num_rows > 0) {
 
 
                             <div class="p-c-d-m-pro-c-top-img">
-                                <img name="book-image" class="book-image" src="<?php echo $imageURL; ?>" alt="">
+                                <img src="<?php echo $imageURL; ?>" alt="">
                             </div>
 
 
@@ -360,7 +363,7 @@ if ($result->num_rows > 0) {
                                     <input type="hidden" name="book_id" value="<?php echo $id; ?>">
                                     <input type="hidden" name="book_title" value="<?php echo $title; ?>">
                                     <input type="hidden" name="book_price" value="<?php echo $final_price; ?>">
-                                    <input type="hidden" name="book_image" value="<?php echo $book_image; ?>">
+                                    <input type="hidden" name="book_image" value="<?php echo $imageURL; ?>">
 
                                     <div class="p-c-d-m-pro-c-top-info-checkout">
                                         <input type="number" max="100" min="1" value="1" name="quantity" id="quantity">
@@ -498,15 +501,35 @@ if ($result->num_rows > 0) {
                                 <h3>Sách tương tự</h3>
                             </div>
                             <div class="p-c-d-m-pro-c-bottom-all">
+                                <?php
+// Câu truy vấn SQL để lấy 3 sách tương tự
+$sql_similar_books = "SELECT books.ID, books.Title, books.Price, books.Discount, books_images.ImageURL
+                      FROM books
+                      JOIN books_images ON books.ID = books_images.BookID
+                      JOIN categories ON books.CategoryID = categories.ID
+                      WHERE categories.Name = '$category' AND books.ID <> $bookID
+                      LIMIT 5";
+$similar_books_result = $conn->query($sql_similar_books);
+
+// Hiển thị thông tin của 3 sách tương tự
+if ($similar_books_result->num_rows > 0) {
+    while ($similar_book_row = $similar_books_result->fetch_assoc()) {
+        $similar_book_title = $similar_book_row['Title'];
+        $similar_book_price = $similar_book_row['Price'];
+        $similar_book_imageURL = $similar_book_row['ImageURL'];
+        ?>
+
                                 <div class="p-c-d-m-pro-c-b-a-card">
-                                    <h4>Danh mục sách</h4>
-                                    <h5>Tiêu đề sách</h5>
+                                    <h4><?php echo $category; ?></h4>
+                                    <h5><?php echo $similar_book_title; ?></h5>
                                     <div class="p-c-d-m-pro-c-b-a-c-img">
-                                        <img src="" alt="Hình ảnh sách">
+                                        <img src="<?php echo $similar_book_imageURL; ?>" alt="Hình ảnh sách">
                                     </div>
                                     <div class="p-c-d-m-pro-c-b-a-c-price">
-                                        <h2>199.000đ</h2>
-                                        <a href=""><i class="fa-solid fa-cart-plus"></i></a>
+                                        <h2><?php echo number_format($similar_book_price, 0, '.', ','); ?>đ</h2>
+                                        <a href="book_detail.php?bookID=<?php echo $similar_book_row['ID']; ?>"><i
+                                                class="fa-solid fa-cart-plus"></i></a>
+
                                     </div>
                                     <div class="p-c-d-m-pro-c-b-a-c-wishlist">
                                         <div class="p-c-d-m-pro-c-b-a-c-w-all">
@@ -521,29 +544,13 @@ if ($result->num_rows > 0) {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="p-c-d-m-pro-c-b-a-card">
-                                    <h4>Danh mục sách</h4>
-                                    <h5>Tiêu đề sách</h5>
-                                    <div class="p-c-d-m-pro-c-b-a-c-img">
-                                        <img src="" alt="Hình ảnh sách">
-                                    </div>
-                                    <div class="p-c-d-m-pro-c-b-a-c-price">
-                                        <h2>199.000đ</h2>
-                                        <a href=""><i class="fa-solid fa-cart-plus"></i></a>
-                                    </div>
-                                    <div class="p-c-d-m-pro-c-b-a-c-wishlist">
-                                        <div class="p-c-d-m-pro-c-b-a-c-w-all">
-                                            <div class="p-c-d-m-pro-c-b-a-c-w-dt">
-                                                <i class="fa-regular fa-heart"></i>
-                                                <p>Wishlist</p>
-                                            </div>
-                                            <div class="p-c-d-m-pro-c-b-a-c-w-dt">
-                                                <i class="fa-solid fa-code-compare"></i>
-                                                <p>Compare</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
+                                <?php
+    }
+}
+?>
+
+
                             </div>
                         </div>
                     </div>

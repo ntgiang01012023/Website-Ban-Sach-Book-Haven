@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Haven</title>
-    <link rel="stylesheet" href="../pages/assets/css/product_detail.css">
+    <link rel="stylesheet" href="../pages/assets/css/cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -112,289 +112,88 @@
 
     <main>
 
-        <section id="product-details">
-            <div class="p-d-container">
-                <div class="p-d-c-title">
-                    <h3>Trang chủ</h3>
-                    <h3><i class="fa-solid fa-angle-right"></i></h3>
-                    <span>Danh mục</span>
-                    <h3><i class="fa-solid fa-angle-right"></i></h3>
-                    <h3>Sách ngôn tình hay nhất 2023</h3>
+        <section id="cart">
+            <div class="cart-container">
+                <div class="c-c-title">
+                    <a href="index_home.php">Trang chủ</a>
+                    <p><i class="fa-solid fa-angle-right"></i></p>
+                    <p>Giỏ hàng</p>
                 </div>
-                <div class="p-d-c-main">
-                    <div class="p-c-d-m-sidebar">
-                        <ul class="p-d-c-m-s-showcate">
-                            <li><a href="">Tất cả danh mục <i class="fa-solid fa-angle-right"></i></a></li>
-                            <li><a href="">Sách ngôn tình (100)</a></li>
-                        </ul>
-                        <div class="p-d-c-m-s-banner">
-                            <img src="../pages/images/banner.jpg" alt="">
-                        </div>
-                        <div class="p-d-c-m-s-last-pro">
-                            <div class="p-d-c-m-s-last-pro-title">
-                                <h2>Sản phẩm mới nhất</h2>
-                                <div class="p-d-c-m-s-last-pro-title-line"></div>
-                            </div>
-                            <div class="p-d-c-m-s-last-pro-details">
-                                <div class="p-d-c-m-s-last-pro-details-img">
-                                    <img src="../pages/images/kd1.jpg" alt="">
-                                </div>
-                                <div class="p-d-c-m-s-last-pro-content">
-                                    <h4>Sách ngôn tình bá đạo nhất 2023</h4>
-                                    <div class="p-d-c-m-s-last-pro-content-rating">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                    <h5>1.999.000đ</h5>
-                                </div>
-                            </div>
-                            <div class="p-d-c-m-s-last-pro-details">
-                                <div class="p-d-c-m-s-last-pro-details-img">
-                                    <img src="../pages/images/kd1.jpg" alt="">
-                                </div>
-                                <div class="p-d-c-m-s-last-pro-content">
-                                    <h4>Sách ngôn tình bá đạo nhất 2023</h4>
-                                    <div class="p-d-c-m-s-last-pro-content-rating">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                    <h5>1.999.000đ</h5>
-                                </div>
-                            </div>
-                            <div class="p-d-c-m-s-last-pro-details">
-                                <div class="p-d-c-m-s-last-pro-details-img">
-                                    <img src="../pages/images/kd1.jpg" alt="">
-                                </div>
-                                <div class="p-d-c-m-s-last-pro-content">
-                                    <h4>Sách ngôn tình bá đạo nhất 2023</h4>
-                                    <div class="p-d-c-m-s-last-pro-content-rating">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                    <h5>1.999.000đ</h5>
-                                </div>
-                            </div>
-                        </div>
+                <div class="c-c-main">
+                    <div class="c-c-m-title">
+                        <h1>Giỏ hàng</h1>
                     </div>
-                    <div class="p-c-d-m-pro-container">
-
-
-                        <div class="success-message">
-                            <!-- <?php echo $success_message; ?> -->
-                            <a href="cart.php">Xem giỏ hàng<i class="fa-solid fa-arrow-right"></i></a>
+                    <div class="c-c-m-views-cart">
+                        <table>
+                            <thead>
+                                <th></th>
+                                <th></th>
+                                <th>Tên sách</th>
+                                <th>Giá</th>
+                                <th>Số lượng</th>
+                                <th>Tổng tiền</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="cart.php?action=delete&book_id=<?php echo $book_id; ?>"><i class="fa-solid fa-xmark"></i></a></td>
+                                    <td><img src="../pages/images/kd1.jpg" alt=""></td>
+                                    <td>Tiểu thuyết Tiểu thuyết Tiểu thuyết Tiểu thuyết Tiểu thuyết</td>
+                                    <td>99.000đ</td>
+                                    <td>
+                                        <form method="post" action="update_cart.php">
+                                            <input type="hidden" name="book_id" value="<?php echo $book_id; ?>">
+                                            <input type="hidden" name="book_title" value="<?php echo $book_title; ?>">
+                                            <input type="hidden" name="book_price" value="<?php echo $book_price; ?>">
+                                            <input type="hidden" name="book_image" value="<?php echo $book_image; ?>">
+                                            <input type="number" min="1" name="quantity" class="cart-quantity" value="<?php echo $quantity; ?>">
+                                            <button type="submit" class="btn-update"><i class="fa-solid fa-rotate-right"></i></button>
+                                        </form>
+                                    </td>
+                                    <td>693.000đ</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="cart.php?action=delete&book_id=<?php echo $book_id; ?>"><i class="fa-solid fa-xmark"></i></a></td>
+                                    <td><img src="../pages/images/kd1.jpg" alt=""></td>
+                                    <td>Tiểu thuyết</td>
+                                    <td>99.000đ</td>
+                                    <td>
+                                        <form method="post" action="update_cart.php">
+                                            <input type="hidden" name="book_id" value="<?php echo $book_id; ?>">
+                                            <input type="hidden" name="book_title" value="<?php echo $book_title; ?>">
+                                            <input type="hidden" name="book_price" value="<?php echo $book_price; ?>">
+                                            <input type="hidden" name="book_image" value="<?php echo $book_image; ?>">
+                                            <input type="number" min="1" name="quantity" class="cart-quantity" value="<?php echo $quantity; ?>">
+                                            <button type="submit" class="btn-update"><i class="fa-solid fa-rotate-right"></i></button>
+                                        </form>
+                                    </td>
+                                    <td>693.000đ</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="c-c-checkout">
+                    <div class="c-c-c-coupon">
+                        <input type="text" placeholder="Nhập mã giảm giá">
+                        <button type="button">Áp dụng</button>
+                    </div>
+                    <div class="c-c-c-cart-totals">
+                        <div class="c-c-c-c-t-title">
+                            <h2>Chi tiết</h2>
                         </div>
-
-
-                        <div class="p-c-d-m-pro-c-top">
-                            <div class="p-c-d-m-pro-c-top-img">
-                                <img class="book-image" src="../pages/images/hd1.jpg" alt="">
-                            </div>
-                            <div class="p-c-d-m-pro-c-top-info">
-                                <a href="">Sách tiểu thuyết</a>
-                                <h2>Sách tiểu thuyết hay nhất 2023</h2>
-                                <div class="p-d-c-m-s-last-pro-content-rating">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </div>
-                                <div class="p-c-d-m-pro-c-top-info-line"></div>
-                                <div class="p-c-d-m-pro-c-top-info-wishlist">
-                                    <li><a href=""><i class="fa-regular fa-heart"></i>Wishlist</a></li>
-                                    <li><a href=""><i class="fa-solid fa-code-compare"></i>Compare</a></li>
-                                </div>
-                                <div class="p-c-d-m-pro-c-top-info-des">
-                                    <p>A groundbreaking Retina display. Powerful dual-core and quad-core Intel processors. Fast flash storage. High-performance graphics. Great built-in apps. And now in the 13-inch model, a revolutionary new Force Touch trackpad and even longer battery life.1 Whatever you can imagine, MacBook Pro with Retina display gives you the power to create.</p>
-                                </div>
-                                <div class="p-c-d-m-pro-c-top-info-price">
-                                    <h1>1.000.000đ</h1>
-                                    <h3>800.000đ</h3>
-                                </div>
-                                <div class="p-c-d-m-pro-c-top-info-checkout">
-                                    <input type="number" max="100" min="1">
-                                    <button type=""><i class="fa-solid fa-cart-plus"></i>Thêm vào giỏ hàng</button>
-                                </div>
-                                
-                            </div>
+                        <div class="c-c-c-c-t-sub">
+                            <h3>Tổng tiền giỏ hàng</h3>
+                            <h4>1.000.000đ</h4>
                         </div>
-                        <div class="p-c-d-m-pro-c-center">
-                            <div class="p-c-d-m-pro-c-center-title">
-                                <div id="p-c-t-t-active" class="p-c-t-text">
-                                    <h2>Đánh giá</h2>
-                                    <div class="p-c-line"></div>
-                                </div>
-                                <div class="p-c-t-text">
-                                    <h2>Mô tả</h2>
-                                    <div class="p-c-line"></div>
-                                </div>
-                                <div class="p-c-t-text">
-                                    <h2>Ưu đãi</h2>
-                                    <div class="p-c-line"></div>
-                                </div>
-                            </div>
-                            <div class="p-c-d-m-pro-c-center-main">
-                                <div class="p-c-d-m-pro-c-center-main-all">
-
-                                
-                                    <div class="p-c-d-m-pro-c-c-m-rating">
-                                        <h3>Dựa trên tất cả đánh giá</h3>
-                                        <h4>0.0</h4>
-                                        <div class="p-c-d-m-pro-c-c-m-r-cord">
-                                            <div class="p-c-d-m-pro-c-c-m-r-c-star">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <div class="p-c-d-m-pro-c-c-m-r-c-line"></div>
-                                            <p>0</p>
-                                        </div>
-                                        <div class="p-c-d-m-pro-c-c-m-r-cord">
-                                            <div class="p-c-d-m-pro-c-c-m-r-c-star">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-regular fa-star"></i>
-                                            </div>
-                                            <div class="p-c-d-m-pro-c-c-m-r-c-line"></div>
-                                            <p>0</p>
-                                        </div>
-                                        <div class="p-c-d-m-pro-c-c-m-r-cord">
-                                            <div class="p-c-d-m-pro-c-c-m-r-c-star">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-regular fa-star"></i>
-                                                <i class="fa-regular fa-star"></i>
-                                            </div>
-                                            <div class="p-c-d-m-pro-c-c-m-r-c-line"></div>
-                                            <p>0</p>
-                                        </div>
-                                        <div class="p-c-d-m-pro-c-c-m-r-cord">
-                                            <div class="p-c-d-m-pro-c-c-m-r-c-star">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-regular fa-star"></i>
-                                                <i class="fa-regular fa-star"></i>
-                                                <i class="fa-regular fa-star"></i>
-                                            </div>
-                                            <div class="p-c-d-m-pro-c-c-m-r-c-line"></div>
-                                            <p>0</p>
-                                        </div>
-                                        <div class="p-c-d-m-pro-c-c-m-r-cord">
-                                            <div class="p-c-d-m-pro-c-c-m-r-c-star">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-regular fa-star"></i>
-                                                <i class="fa-regular fa-star"></i>
-                                                <i class="fa-regular fa-star"></i>
-                                                <i class="fa-regular fa-star"></i>
-                                            </div>
-                                            <div class="p-c-d-m-pro-c-c-m-r-c-line"></div>
-                                            <p>0</p>
-                                        </div>
-                                    </div>
-                                    <div class="p-c-d-m-pro-c-c-m-reviews">
-                                        <h3>Hãy là người đầu tiên nhận xét</h3>
-                                        <div class="p-c-d-m-pro-c-c-m-r-rating">
-                                            <h4>Đánh giá</h4>
-                                            <div class="p-c-d-m-pro-c-c-m-r-c-star">
-                                                <i class="fa-regular fa-star"></i>
-                                                <i class="fa-regular fa-star"></i>
-                                                <i class="fa-regular fa-star"></i>
-                                                <i class="fa-regular fa-star"></i>
-                                                <i class="fa-regular fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <div class="p-c-d-m-pro-c-c-m-r-review">
-                                            <h4>Nhận xét</h4>
-                                            <textarea name="" id="" cols="30" rows="10"></textarea>
-                                        </div>
-                                        <div class="p-c-d-m-pro-c-c-m-r-name">
-                                            <h4>Tên khách hàng *</h4>
-                                            <input type="text">
-                                        </div>
-                                        <div class="p-c-d-m-pro-c-c-m-r-email">
-                                            <h4>Địa chỉ Email *</h4>
-                                            <input type="email">
-                                        </div>
-                                        <div class="p-c-d-m-pro-c-c-m-r-save-email">
-                                            <input type="checkbox">
-                                            <h4>Lưu tên, email và trang web của tôi trong trình duyệt này cho lần tôi bình luận tiếp theo.</h4>
-                                        </div>
-                                        <button type="button">Thêm đánh giá</button>
-                                    </div>
-                                </div>
-                                <div class="p-c-d-m-pro-c-c-m-nobio">
-                                    <p>Hiện tại không có đánh giá nào.</p>
-                                </div>
-                            </div>
-                            
+                        <div class="c-c-c-c-t-ship">
+                            <h3>Phí vận chuyển</h3>
+                            <h4>50.000đ</h4>
                         </div>
-                        <div class="p-c-d-m-pro-c-bottom">
-                            <div class="p-c-d-m-pro-c-bottom-title">
-                                <h3>Sách tương tự</h3>
-                            </div>
-                            <div class="p-c-d-m-pro-c-bottom-all">
-                                <div class="p-c-d-m-pro-c-b-a-card">
-                                    <h4>Danh mục sách</h4>
-                                    <h5>Tiêu đề sách</h5>
-                                    <div class="p-c-d-m-pro-c-b-a-c-img">
-                                        <img src="" alt="Hình ảnh sách">
-                                    </div>
-                                    <div class="p-c-d-m-pro-c-b-a-c-price">
-                                        <h2>199.000đ</h2>
-                                        <a href=""><i class="fa-solid fa-cart-plus"></i></a>
-                                    </div>
-                                    <div class="p-c-d-m-pro-c-b-a-c-wishlist">
-                                        <div class="p-c-d-m-pro-c-b-a-c-w-all">
-                                            <div class="p-c-d-m-pro-c-b-a-c-w-dt">
-                                                <i class="fa-regular fa-heart"></i>
-                                                <p>Wishlist</p>
-                                            </div>
-                                            <div class="p-c-d-m-pro-c-b-a-c-w-dt">
-                                                <i class="fa-solid fa-code-compare"></i>
-                                                <p>Compare</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="p-c-d-m-pro-c-b-a-card">
-                                        <h4>Danh mục sách</h4>
-                                        <h5>Tiêu đề sách</h5>
-                                        <div class="p-c-d-m-pro-c-b-a-c-img">
-                                            <img src="" alt="Hình ảnh sách">
-                                        </div>
-                                        <div class="p-c-d-m-pro-c-b-a-c-price">
-                                            <h2>199.000đ</h2>
-                                            <a href=""><i class="fa-solid fa-cart-plus"></i></a>
-                                        </div>
-                                        <div class="p-c-d-m-pro-c-b-a-c-wishlist">
-                                            <div class="p-c-d-m-pro-c-b-a-c-w-all">
-                                                <div class="p-c-d-m-pro-c-b-a-c-w-dt">
-                                                    <i class="fa-regular fa-heart"></i>
-                                                    <p>Wishlist</p>
-                                                </div>
-                                                <div class="p-c-d-m-pro-c-b-a-c-w-dt">
-                                                    <i class="fa-solid fa-code-compare"></i>
-                                                    <p>Compare</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                </div>
-                            </div>
+                        <div class="c-c-c-c-t-total">
+                            <h3>Tổng thanh toán</h3>
+                            <h4 id="total">1.050.000đ</h4>
                         </div>
+                        <a href="">Thanh toán</a>
                     </div>
                 </div>
             </div>

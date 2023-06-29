@@ -50,12 +50,32 @@
                 </div>
                 <div class="main-search">
                     <input id="input-header" type="text" placeholder="Tìm kiếm sách tại đây...">
-                    <select name="books" id="books">
-                        <option value="">Tất cả danh mục</option>
-                        <option value="">Book 1</option>
-                        <option value="">Book 2</option>
-                        <option value="">Book 3</option>
-                    </select>
+
+                    <?php 
+
+// Truy vấn để lấy danh sách các danh mục
+$sql = "SELECT ID, Name FROM categories";
+$result = $conn->query($sql);
+
+// Kiểm tra và hiển thị danh mục trong thẻ select
+if ($result->num_rows > 0) {
+    echo '<select name="books" id="books">';
+    echo '<option value="">Tất cả danh mục</option>';
+
+    while ($row = $result->fetch_assoc()) {
+        $categoryID = $row["ID"];
+        $categoryName = $row["Name"];
+        echo '<option value="' . $categoryID . '">' . $categoryName . '</option>';
+    }
+
+    echo '</select>';
+} else {
+    echo "Không có danh mục nào.";
+}
+
+?>
+
+
                     <button><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
 
@@ -92,7 +112,10 @@
 
                         <?php
     // Kiểm tra xem 'cart' đã tồn tại trong $_SESSION hay chưa
-    $totalQuantity = isset($_SESSION['cart']) ? array_sum(array_column($_SESSION['cart'], 'quantity')) : 0;
+    $totalQuantity = 0;
+    if (isset($_SESSION['cart'])) {
+        $totalQuantity = array_sum(array_column($_SESSION['cart'], 'quantity'));
+    }
     ?>
 
                         <div class="quantity">
@@ -100,19 +123,19 @@
                         </div>
 
                         <?php
-    $totalPrice = isset($_SESSION['cart']) ? array_sum(array_column($_SESSION['cart'], 'subtotal')) : 0;
-    ?>
-                        <?php
     $totalPrice = 0;
-    foreach ($_SESSION['cart'] as $item) {
-        $book_price = floatval($item['book_price']);
-        $quantity = intval($item['quantity']);
-        $subtotal = $book_price * $quantity;
-        $totalPrice += $subtotal;
+    if (isset($_SESSION['cart'])) {
+        foreach ($_SESSION['cart'] as $item) {
+            $book_price = floatval($item['book_price']);
+            $quantity = intval($item['quantity']);
+            $subtotal = $book_price * $quantity;
+            $totalPrice += $subtotal;
+        }
     }
     ?>
                         <p><?php echo number_format($totalPrice, 0, '.', ',') . 'đ'; ?></p>
                     </div>
+
 
 
 
