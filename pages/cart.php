@@ -263,7 +263,7 @@ if (isset($_GET['action']) && isset($_GET['book_id'])) {
                                         </td>
                                         <td><?php echo number_format($subtotal, 0, '.', ',') . 'đ'; ?></td>
                                         <?php
-                                        $total_payment = $subtotal + 50000;
+                                        
     }
     ?>
                                     </tr>
@@ -281,21 +281,45 @@ if (isset($_GET['action']) && isset($_GET['book_id'])) {
                             <div class="c-c-c-c-t-title">
                                 <h2>Chi tiết</h2>
                             </div>
-                            <div class="c-c-c-c-t-sub">
-                                <h3>Tổng tiền giỏ hàng</h3>
-                                <h4><?php echo number_format($total, 0, '.', ',') . 'đ'; ?></h4>
 
-                            </div>
-                            <div class="c-c-c-c-t-ship">
-                                <h3>Phí vận chuyển</h3>
-                                <h4>50.000đ</h4>
-                            </div>
-                            <div class="c-c-c-c-t-total">
-                                <h3>Tổng thanh toán</h3>
-                                <h4 id="total"><?php echo number_format($total_payment, 0, '.', ',') . 'đ'; ?></h4>
-                            </div>
-                            <a href="">Thanh toán</a>
+                            <?php
+    // Kiểm tra nếu giỏ hàng rỗng
+    if ($total == 0) {
+        echo '<div class="c-c-c-c-t-sub">';
+        echo '<h3>Tổng tiền giỏ hàng</h3>';
+        echo '<h4>0đ</h4>';
+        echo '</div>';
+
+        echo '<div class="c-c-c-c-t-ship">';
+        echo '<h3>Phí vận chuyển</h3>';
+        echo '<h4>0đ</h4>';
+        echo '</div>';
+
+        echo '<div class="c-c-c-c-t-total">';
+        echo '<h3>Tổng thanh toán</h3>';
+        echo '<h4 id="total">0đ</h4>';
+        echo '</div>';
+    } else {
+        echo '<div class="c-c-c-c-t-sub">';
+        echo '<h3>Tổng tiền giỏ hàng</h3>';
+        echo '<h4>'.number_format($total, 0, '.', ',').'đ</h4>';
+        echo '</div>';
+
+        echo '<div class="c-c-c-c-t-ship">';
+        echo '<h3>Phí vận chuyển</h3>';
+        echo '<h4>50.000đ</h4>';
+        echo '</div>';
+
+        echo '<div class="c-c-c-c-t-total">';
+        echo '<h3>Tổng thanh toán</h3>';
+        echo '<h4 id="total">'.number_format($total+50000, 0, '.', ',').'đ</h4>';
+        echo '</div>';
+    }
+    ?>
+
+                            <a href="checkout.php">Thanh toán</a>
                         </div>
+
                     </div>
                 </div>
             </section>

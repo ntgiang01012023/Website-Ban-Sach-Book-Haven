@@ -818,6 +818,321 @@ tbody td form button.btn-update:hover {
 
 
 
+/* Checkout */
+
+#checkout {
+    width: 100%;
+    height: auto;
+    padding: 30px 0px 150px 0px;
+}
+
+.checkout-container {
+    width: 84%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.c-c-check {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.c-c-check h1 {
+    font-size: 40px;
+    font-weight: 400;
+    color: var(--bs-dark);
+}
+
+.c-c-login, .c-c-code{
+    width: 70%;
+    height: 60px;
+    background-color: var(--bs-ec-primary);
+    border-left: 10px solid #ccad00;
+    margin: 0 auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 15px;
+    margin-bottom: 30px;
+}
+
+.c-c-login p, .c-c-code p {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--bs-dark);
+}
+
+.c-c-login a, .c-c-code a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--bs-dark);
+    margin-left: 5px;
+}
+
+.c-c-c-billing {
+    width: 60%;
+    height: auto;
+    padding-right: 30px;
+}
+
+.c-c-c-b-title {
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid var(--bs-ec-dark-body);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.c-c-c-b-title h1 {
+    font-size: 25px;
+    font-weight: 400;
+    color: var(--bs-dark);
+    display: block;
+    width: 210px;
+    height: 60px;
+    border-bottom: 1px solid var(--bs-ec-primary);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.c-c-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.c-c-n-f, .c-c-n-l {
+    display: flex;
+    flex-direction: column;
+}
+
+.c-c-n-f label, .c-c-n-l label {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--bs-dark);
+    margin-top: 40px;
+}
+
+.c-c-n-f input, .c-c-n-l input {
+    width: 315px;
+    height: 45px;
+    border-radius: 50px;
+    border: 1px solid var(--bs-ec-dark-body);
+    outline: none;
+    padding: 0px 15px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--bs-gray);
+    margin-top: 10px;
+    transition: border-color 0.3s;
+}
+
+.c-c-n-f input:focus, .c-c-n-l input:focus {
+    border-color: var(--bs-cyan); /* Màu xanh */
+    outline: none; /* Loại bỏ đường viền khi nhấn vào */
+}
+
+.c-c-e, .c-c-p, .c-c-ad {
+    display: flex;
+    flex-direction: column;
+}
+
+.c-c-e label, .c-c-p label, .c-c-ad label {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--bs-dark);
+    margin-top: 20px;
+}
+
+.c-c-e input, .c-c-p input, .c-c-ad input {
+    width: 100%;
+    height: 45px;
+    border-radius: 50px;
+    border: 1px solid var(--bs-ec-dark-body);
+    outline: none;
+    padding: 0px 15px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--bs-dark);
+    margin-top: 10px;
+    transition: border-color 0.3s;
+}
+
+.c-c-e input:focus, .c-c-p input:focus, .c-c-ad input:focus {
+    border-color: var(--bs-cyan); /* Màu xanh */
+    outline: none; /* Loại bỏ đường viền khi nhấn vào */
+}
+
+.c-c-note {
+    display: flex;
+    flex-direction: column;
+}
+
+.c-c-note label {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--bs-dark);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.c-c-note textarea {
+    border-radius: 30px;
+    border: 1px solid var(--bs-ec-dark-body);
+    outline: none;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--bs-dark);
+    transition: border-color 0.3s;
+}
+
+.c-c-note textarea:focus {
+    border-color: var(--bs-cyan); /* Màu xanh */
+    outline: none; /* Loại bỏ đường viền khi nhấn vào */
+}
+
+
+
+.c-c-c-totals {
+    width: 40%;
+    height: auto;
+    background-color: #f5f5f5;
+    padding: 20px 20px 40px 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.c-c-c-t-title-head {
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid var(--bs-ec-dark-body);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.c-c-c-t-title-head h2 {
+    font-size: 25px;
+    font-weight: 400;
+    color: var(--bs-dark);
+    display: block;
+    width: 210px;
+    height: 60px;
+    border-bottom: 1px solid var(--bs-ec-primary);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.c-c-c-t-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.c-c-c-t-title h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--bs-dark);
+}
+
+.c-c-c-t-details-book {
+    display: flex;
+    flex-direction: column;
+}
+
+.details-book {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.c-c-c-t-d-b-d {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.c-c-c-t-d-b-d h4, .c-c-c-t-d-b-p h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--bs-gray);
+}
+
+.c-c-c-t-d-b-d h5 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--bs-dark);
+    margin-left: 10px;
+}
+
+
+.c-c-c-t-sub, .c-c-c-t-ship, .c-c-c-t-total {
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid var(--bs-ec-dark-body);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.c-c-c-t-total {
+    border-bottom: none;
+    margin-bottom: 20px;
+}
+
+.c-c-c-t-sub h3, .c-c-c-t-ship h3, .c-c-c-t-total h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--bs-ec-dark);
+}
+
+.c-c-c-t-sub h4, .c-c-c-t-ship h4, .c-c-c-t-total h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--bs-gray);
+}
+
+.c-c-c-totals a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--bs-ec-primary);
+    color: var(--bs-ec-dark);
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 40px;
+    transition: all 0.3s;
+}
+
+.c-c-c-totals a:hover {
+    background-color: #f0cc00;
+}
+
+.c-c-c-t-total h4#total {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--bs-danger);
+}
+
+
+
+
+
+
+
+
 
 
 
