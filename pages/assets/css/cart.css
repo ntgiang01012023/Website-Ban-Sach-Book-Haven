@@ -573,7 +573,7 @@ a.tooltip-cart:hover::after {
     width: 100%;
     height: auto;
     background-color: var(--bs-white);
-    padding: 30px 0px;
+    padding: 30px 0px 140px 0px;
 }
 
 .cart-container {
@@ -704,6 +704,13 @@ tbody td form button.btn-update:hover {
     width: 70%;
     height: auto;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+form.checkout-post {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: start;
@@ -1104,6 +1111,22 @@ tbody td form button.btn-update:hover {
     color: var(--bs-gray);
 }
 
+.c-c-c-totals button#btn-checkout {
+    padding: 15px 30px;
+    border: none;
+    background-color: var(--bs-ec-primary);
+    color: var(--bs-ec-dark);
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 40px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.c-c-c-totals button#btn-checkout:hover {
+    background-color: #f0cc00;
+}
+
 .c-c-c-totals a {
     text-decoration: none;
     display: inline-block;
@@ -1128,8 +1151,62 @@ tbody td form button.btn-update:hover {
 
 
 
+/* Checkout Process */
 
+#check-process {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.c-p-container {
+    width: 500px;
+    height: auto;
+    border: 1px solid var(--bs-ec-dark-body);
+    border-radius: 10px;
+    padding: 60px 50px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.c-p-container i {
+    font-size: 120px;
+    color: var(--bs-ec-primary);
+    margin-bottom: 80px;
+}
+
+.c-p-container h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--bs-dark);
+    margin-bottom: 10px;
+}
+
+.c-p-container h2 {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--bs-dark);
+    margin-bottom: 30px;
+}
+
+.c-p-container a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 50px;
+    background-color: var(--bs-ec-primary);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--bs-dark);
+    transition: all 0.3s ease;
+}
+
+.c-p-container a:hover {
+    background-color: var(--bs-ec-dark);
+    color: var(--bs-white);
+}
 
 
 

@@ -5,15 +5,15 @@
                 <div class="f-c-top-left">
                     <div class="f-c-top-left-left">
                         <i class="fa-regular fa-paper-plane"></i>
-                        <h3>Sign up to Newsletter</h3>
+                        <h3>Đăng ký nhận bản tin</h3>
                     </div>
                     <div class="f-c-top-left-right">
-                        <h3>...and receive <span>$20 coupon for first shopping</span></h3>
+                        <h3>...và mã giảm giá <span>50.000đ cho lần mua sắm đầu tiên</span></h3>
                     </div>
                 </div>
                 <div class="f-c-top-right">
-                    <input type="text" placeholder="Enter your emails address">
-                    <button>SignUp</button>
+                    <input type="text" placeholder="Nhập email của bạn vào đây">
+                    <button>Đăng ký</button>
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
                     <p>(800) 8001-8588, (0600) 874 548</p>
                 </div>
                 <div class="f-c-main-left-info">
-                    <h3>Contact Info</h3>
+                    <h3>Thông tin liên hệ</h3>
                     <p>17 Princess Road, London, Greater London NW1 8JR, UK</p>
                 </div>
                 <div class="f-c-main-left-icon">
@@ -45,41 +45,39 @@
 
             <div class="f-c-main-right">
                 <div class="f-c-main-right-column">
-                    <h3>Find It Fast</h3>
-                    <li><a href="">Science fiction books</a></li>
-                    <li><a href="">Self-help books</a></li>
-                    <li><a href="">History books</a></li>
-                    <li><a href="">Anime manga</a></li>
-                    <li><a href="">Manual and self-study books</a></li>
-                    <li><a href="">Book of Poetry and Prose</a></li>
+                    <h3>Tìm kiếm nhanh</h3>
+                    <li><a href="">Tiểu thuyết</a></li>
+                    <li><a href="">Khoa học và công nghệ</a></li>
+                    <li><a href="">Tâm lý học phát triển cá nhân</a></li>
+                    <li><a href="">Kinh doan và quản lý</a></li>
+                    <li><a href="">Hướng dẫn và tự học</a></li>
                 </div>
                 <div class="f-c-main-right-column">
-                    <h3>All pages</h3>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Contact</a></li>
-                    <li><a href="">Wishlist</a></li>
-                    <li><a href="">Compare</a></li>
+                    <h3>Tất cả trang</h3>
+                    <li><a href="">Giới thiệu</a></li>
+                    <li><a href="">Liên hệ</a></li>
+                    <li><a href="">Yêu thích</a></li>
+                    <li><a href="">So sánh</a></li>
                     <li><a href="">FAQ</a></li>
-                    <li><a href="">Store Directory</a></li>
                 </div>
                 <div class="f-c-main-right-column-right">
-                    <h3>Customer Care</h3>
-                    <li><a href="">My Account</a></li>
-                    <li><a href="">Track your Order</a></li>
-                    <li><a href="">Customer Service</a></li>
-                    <li><a href="">Returns/Exchange</a></li>
+                    <h3>Chăm sóc khách hàng</h3>
+                    <li><a href="">Tài khoản</a></li>
+                    <li><a href="">Theo dõi đơn hàng</a></li>
+                    <li><a href="">Dịch vụ khách hàng</a></li>
                     <li><a href="">FAQs</a></li>
-                    <li><a href="">Product Support</a></li>
+                    <li><a href="">Hổ trợ khách hàng</a></li>
                 </div>
             </div>
         </div>
     </div>
     <div class="footer-container-bottom">
         <div class="f-c-bottom">
-            <h3><i class="fa-regular fa-copyright"></i><span>BookHaven</span> - All Rights Reserved</h3>
+            <h3><i class="fa-regular fa-copyright"></i>Bản quyền thuộc về <span>BookHaven</span></h3>
             <img src="../pages/images/patment-icon1.png" alt="">
         </div>
     </div>
+
 </footer>
 
 </body>
