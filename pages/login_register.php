@@ -1,6 +1,10 @@
-<?php require_once "../config/config.php" ?>
+<?php require_once "../config/config.php";
 
-<?php require_once "../config/config.php" ?>
+session_start();
+
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +38,7 @@
                         <li><a href="">|<i class="fa-solid fa-truck-fast"></i>Theo dõi đơn hàng</a></li>
                         <li><a href="">|<i class="fa-solid fa-bag-shopping"></i>Cửa hàng</a></li>
                         <?php
-                        session_start();
+                        
                         if(isset($_SESSION['username'])){?>
                         <li><a href="my_account.php">|<i class="fa-solid fa-user"></i>Tài khoản</a>
                             <?php } else{?>
@@ -151,12 +155,26 @@
                             <h2>Đăng nhập</h2>
                         </div>
                         <p>Chào mừng trở lại! Đăng nhập vào tài khoản của bạn.</p>
+
                         <form action="login.php" method="POST">
                             <label for="username">Tên người dùng hoặc địa chỉ email *</label><br>
                             <input class="input-field" type="text" id="username" name="username" required><br>
 
                             <label for="password">Mật khẩu *</label><br>
                             <input class="input-field" type="password" id="password" name="password" required><br>
+
+
+                            <!-- Hiển thị thông báo thành công (nếu có) -->
+                            <?php 
+                            
+                            if (isset($_SESSION['error_message'])) {
+                                $error_message = $_SESSION['error_message'];
+                                unset($_SESSION['error_message']); // Xóa thông báo sau khi đã hiển thị
+                            }
+                            if (isset($error_message)): ?>
+                            <p style="color: red; font-weight: 600;"><?php echo $error_message; ?></p>
+                            <?php endif; ?>
+
 
                             <input type="checkbox" id="rememberPassword" name="rememberPassword">
                             <label for="rememberPassword">Ghi nhớ mật khẩu</label><br>

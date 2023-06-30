@@ -319,7 +319,12 @@ if ($result->num_rows > 0) {
 
 
                             <div class="p-c-d-m-pro-c-top-img">
-                                <img src="<?php echo $imageURL; ?>" alt="">
+                                <div class="zoom" class="zoom" onmousemove="zoom(event)"
+                                    style="background-image: url(<?php echo $imageURL; ?>)">
+
+                                    <img src="<?php echo $imageURL; ?>" alt="">
+                                </div>
+
                             </div>
 
 
@@ -561,5 +566,8 @@ if ($similar_books_result->num_rows > 0) {
         </section>
 
     </main>
+
+
+
 
     <?php include_once "../pages/includes/footer_pages.php"?>

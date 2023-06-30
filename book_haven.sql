@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 29, 2023 lúc 08:48 PM
+-- Thời gian đã tạo: Th6 30, 2023 lúc 12:02 PM
 -- Phiên bản máy phục vụ: 10.4.27-MariaDB
 -- Phiên bản PHP: 8.2.0
 
@@ -162,7 +162,24 @@ INSERT INTO `orders` (`ID`, `UserID`, `OrderDate`, `TotalPrice`, `Status`, `Cust
 (16, 2, NULL, '35000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '09999999999', 'ntgiang01012023@gmail.com'),
 (17, 2, NULL, '350000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '09999999999', 'ntgiang01012023@gmail.com'),
 (18, 2, NULL, '35000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '09999999999', 'ntgiang01012023@gmail.com'),
-(19, 2, NULL, '35000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '09999999999', 'ntgiang01012023@gmail.com');
+(19, 2, NULL, '35000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '09999999999', 'ntgiang01012023@gmail.com'),
+(20, 2, NULL, '568000.00', 'Pending', 'Nguyễn Trang', 'Cái Bờ, Tiền Giang', '09999999999', 'trangb2006861@student.ctu.edu.vn'),
+(21, 2, NULL, '568000.00', 'Pending', 'Nguyễn Trang', 'Cái Bờ, Tiền Giang', '09999999999', 'trangb2006861@student.ctu.edu.vn'),
+(22, 2, NULL, '35000.00', 'Pending', 'Nguyễn Trang', 'Cái Bờ, Tiền Giang', '09999999999', 'trangb2006861@student.ctu.edu.vn'),
+(23, 2, NULL, '35000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '09999999999', 'giangb1906463@student.ctu.edu.vn'),
+(24, 2, NULL, '35000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '09999999999', 'ntgiang01012023@gmail.com'),
+(25, 2, NULL, '35000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '09999999999', 'ntgiang01012023@gmail.com'),
+(26, 2, NULL, '140000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '09999999999', 'ntgiang01012023@gmail.com'),
+(27, 2, NULL, '239000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '09999999999', 'ntgiang01012023@gmail.com'),
+(28, 2, NULL, '239000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '09999999999', 'ntgiang01012023@gmail.com'),
+(29, 2, NULL, '290000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '09999999999', 'ntgiang01012023@gmail.com'),
+(30, 2, NULL, '290000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '09999999999', 'ntgiang01012023@gmail.com'),
+(31, 4, NULL, '81000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '09999999999', 'ntgiang01012023@gmail.com'),
+(32, 2, NULL, '8000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '09999999999', 'ntgiang01012023@gmail.com'),
+(33, 2, NULL, '215000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '09999999999', 'ntgiang01012023@gmail.com'),
+(34, 4, NULL, '35000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '0999999999', 'ntgiang01012023@gmail.com'),
+(35, 5, NULL, '68000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '09999999999', 'ntgiang01012023@gmail.com'),
+(36, 2, NULL, '68000.00', 'Pending', 'd d', 'e', 'e', 'ntgiang01012023@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -199,7 +216,24 @@ INSERT INTO `order_items` (`ID`, `OrderID`, `BookID`, `BookTitle`, `BookPrice`, 
 (14, 16, 25, 'Nhà Giả Kim (Tái Bản 2020)', '35000.00', 1),
 (15, 17, 25, 'Nhà Giả Kim (Tái Bản 2020)', '35000.00', 10),
 (16, 18, 25, 'Nhà Giả Kim (Tái Bản 2020)', '35000.00', 1),
-(17, 19, 25, 'Nhà Giả Kim (Tái Bản 2020)', '35000.00', 1);
+(17, 19, 25, 'Nhà Giả Kim (Tái Bản 2020)', '35000.00', 1),
+(18, 20, 25, 'Nhà Giả Kim (Tái Bản 2020)', '35000.00', 1),
+(20, 21, 25, 'Nhà Giả Kim (Tái Bản 2020)', '35000.00', 1),
+(22, 22, 25, 'Nhà Giả Kim (Tái Bản 2020)', '35000.00', 1),
+(23, 23, 25, 'Nhà Giả Kim (Tái Bản 2020)', '35000.00', 1),
+(24, 24, 25, 'Nhà Giả Kim (Tái Bản 2020)', '35000.00', 1),
+(25, 25, 25, 'Nhà Giả Kim (Tái Bản 2020)', '35000.00', 1),
+(26, 26, 25, 'Nhà Giả Kim (Tái Bản 2020)', '35000.00', 4),
+(27, 27, 25, 'Nhà Giả Kim (Tái Bản 2020)', '35000.00', 1),
+(29, 28, 25, 'Nhà Giả Kim (Tái Bản 2020)', '35000.00', 1),
+(31, 29, 25, 'Nhà Giả Kim (Tái Bản 2020)', '35000.00', 1),
+(33, 30, 25, 'Nhà Giả Kim (Tái Bản 2020)', '35000.00', 1),
+(35, 31, 24, 'Cây Cam Ngọt Của Tôi', '81000.00', 1),
+(36, 32, 31, 'Một Lít Nước Mắt (Tái Bản 2019)', '8000.00', 1),
+(37, 33, 29, 'Totto-Chan Bên Cửa Sổ (Tái Bản 2019)', '39000.00', 1),
+(39, 34, 25, 'Nhà Giả Kim (Tái Bản 2020)', '35000.00', 1),
+(40, 35, 26, 'Tôi Là Bêtô (Tái Bản 2018)', '68000.00', 1),
+(41, 36, 26, 'Tôi Là Bêtô (Tái Bản 2018)', '68000.00', 1);
 
 -- --------------------------------------------------------
 
@@ -253,7 +287,10 @@ INSERT INTO `users` (`ID`, `Username`, `Password`, `Email`, `FullName`, `Address
 (1, 'admin', '123', '', '', '', '', 'admin'),
 (2, 'giang', 'giang1123', 'ntgiang01012023@gmail.com', '', '', '', 'user'),
 (3, 'maymay', '123', 'may@gmaul.com', '', '', '', 'user'),
-(4, 'giang1', '123', 'giang1@gmail.com', '', '', '', 'user');
+(4, 'giang1', '123', 'giang1@gmail.com', '', '', '', 'user'),
+(5, 'test', '123', 'test@gmail.com', '', '', '', 'user'),
+(6, 'test1', '123', 'test1@gmail.com', '', '', '', 'user'),
+(7, 'test2', '123', 'test2@gmail.com', '', '', '', 'user');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -342,13 +379,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT cho bảng `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT cho bảng `payments`
@@ -366,7 +403,7 @@ ALTER TABLE `purchasehistory`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

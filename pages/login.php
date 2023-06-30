@@ -1,6 +1,5 @@
 <?php
-// Bắt đầu phiên đăng nhập
-session_start();
+session_start(); // Bắt đầu session
 
 require_once "../config/config.php";
 
@@ -10,16 +9,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    // Tìm kiếm người dùng trong cơ sở dữ liệu
-    $sql = "SELECT * FROM users WHERE Username = '$username'";
-    $result = mysqli_query($conn, $sql);
 
-    if (mysqli_num_rows($result) == 1) {
-        // Lưu thông tin người dùng vào session để sử dụng ở các trang khác
-        $_SESSION['username'] = $username;
-        header('Location: my_account.php'); // Chuyển đến trang chính của người dùng
+    // Tìm kiếm người dùng trong cơ sở dữ liệu
+    $query = "SELECT * FROM users WHERE Username = '$username'";
+    $result = $conn->query($query);
+
+    if ($result->num_rows == 1) {
+        $user = $result->fetch_assoc();
+        $storedPassword = $user['Password'];
+
+        if ($password === $storedPassword) {
+            // Lưu thông tin người dùng vào session để sử dụng ở các trang khác
+            $_SESSION['username'] = $username;
+
+            // Chuyển hướng đến trang chính của người dùng
+            header('Location: my_account.php');
+            exit();
+        } else {
+            $_SESSION['error_message'] = 'Sai tên tài khoản hoặc mật khẩu *';
+            header('Location: login_register.php');
+            exit();
+        }
     } else {
-        echo "Tài khoản hoặc mật khẩu không đúng.";
+        $_SESSION['error_message'] = 'Sai tên tài khoản hoặc mật khẩu *';
+        header('Location: login_register.php');
+        exit();
     }
 }
 ?>

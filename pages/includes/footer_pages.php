@@ -82,17 +82,44 @@
 
 </body>
 <script>
-var lightButton = document.getElementById('light-button');
-var darkButton = document.getElementById('dark-button');
+function zoom(e) {
+    var zoomer = e.currentTarget;
+    e.offsetX ? offsetX = e.offsetX : offsetX = e.touches[0].pageX
+    e.offsetY ? offsetY = e.offsetY : offsetX = e.touches[0].pageX
+    x = offsetX / zoomer.offsetWidth * 100
+    y = offsetY / zoomer.offsetHeight * 100
+    zoomer.style.backgroundPosition = x + '% ' + y + '%';
+}
 
-lightButton.addEventListener('click', function() {
-    lightButton.classList.add('active');
-    darkButton.classList.remove('active');
+
+var lightButton = document.getElementById("light-button");
+var darkButton = document.getElementById("dark-button");
+var body = document.body;
+
+// Kiểm tra trạng thái giao diện được lưu trữ trong localStorage
+var isDarkMode = localStorage.getItem("darkMode");
+if (isDarkMode === "true") {
+    body.classList.add("dark-mode");
+    lightButton.classList.remove("active");
+    darkButton.classList.add("active");
+}
+
+darkButton.addEventListener("click", function() {
+    body.classList.add("dark-mode");
+    body.classList.remove("light-mode");
+    lightButton.classList.remove("active");
+    darkButton.classList.add("active");
+    // Lưu trạng thái giao diện tối vào localStorage
+    localStorage.setItem("darkMode", "true");
 });
 
-darkButton.addEventListener('click', function() {
-    darkButton.classList.add('active');
-    lightButton.classList.remove('active');
+lightButton.addEventListener("click", function() {
+    body.classList.remove("dark-mode");
+    body.classList.add("light-mode");
+    darkButton.classList.remove("active");
+    lightButton.classList.add("active");
+    // Xóa trạng thái giao diện tối từ localStorage
+    localStorage.removeItem("darkMode");
 });
 
 

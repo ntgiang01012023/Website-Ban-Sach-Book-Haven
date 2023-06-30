@@ -760,6 +760,27 @@ a.tooltip-cart:hover::after {
     cursor: zoom-in;
 }
 
+.zoom {
+    background-position: 50% 50%;
+    position: relative;
+    width: 400px;
+    height: 400px;   
+    overflow: hidden;
+    cursor: zoom-in;
+}
+
+.zoom img:hover {
+    opacity: 0;
+
+}
+
+.zoom img {
+    transition: opacity .5s;
+    display: block;
+    width: 400px;
+    height: 400px;
+}
+
 .p-c-d-m-pro-c-top-img img {
     width: 480px;
     height: 400px;
