@@ -34,12 +34,12 @@
                     <p>17 Princess Road, London, Greater London NW1 8JR, UK</p>
                 </div>
                 <div class="f-c-main-left-icon">
-                    <i class="fa-brands fa-facebook"></i>
-                    <i class="fa-brands fa-pinterest"></i>
-                    <i class="fa-brands fa-linkedin-in"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-youtube"></i>
-                    <i class="fa-solid fa-wifi"></i>
+                    <a href="https://www.facebook.com/profile.php?id=100011568160112"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/company/job3svn/
+linkedin "><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/maymay12507/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/watch?v=oj90aXE4m20"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
 
