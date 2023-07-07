@@ -46,11 +46,11 @@ linkedin "><i class="fa-brands fa-linkedin-in"></i></a>
             <div class="f-c-main-right">
                 <div class="f-c-main-right-column">
                     <h3>Tìm kiếm nhanh</h3>
-                    <li><a href="">Tiểu thuyết</a></li>
-                    <li><a href="">Khoa học và công nghệ</a></li>
-                    <li><a href="">Tâm lý học phát triển cá nhân</a></li>
-                    <li><a href="">Kinh doan và quản lý</a></li>
-                    <li><a href="">Hướng dẫn và tự học</a></li>
+                    <li><a href="category_details.php?categories=22">Tiểu thuyết</a></li>
+                    <li><a href="category_details.php?categories=25">Khoa học và công nghệ</a></li>
+                    <li><a href="category_details.php?categories=26">Tâm lý học</a></li>
+                    <li><a href="category_details.php?categories=29">Kinh doanh và quản lý</a></li>
+                    <li><a href="category_details.php?categories=30">Hướng dẫn và tự học</a></li>
                 </div>
                 <div class="f-c-main-right-column">
                     <h3>Tất cả trang</h3>
@@ -256,7 +256,7 @@ function setActiveDot(index) {
 }
 
 function goToSlide(index) {
-    const slideOffset = slideWidth + 100; // Tăng 10px so với giá trị gốc
+    const slideOffset = slideWidth + 0; // Tăng 10px so với giá trị gốc
 
     slidesContainer.style.transform = `translateX(-${slideOffset * index}px)`;
     currentIndex = index;

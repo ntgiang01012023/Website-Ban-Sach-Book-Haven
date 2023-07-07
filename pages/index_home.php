@@ -23,7 +23,7 @@
                             
                             if($result -> num_rows > 0) {
                                 while($row = $result -> fetch_assoc()) {
-                                    echo "<li><a href='category.php?id=".$row['ID']."'>".$row["Name"]."<i class='fa-solid fa-angle-right'></i></a></li>";
+                                    echo "<li><a href='category_details.php?categories=".$row['ID']."'>".$row["Name"]."<i class='fa-solid fa-angle-right'></i></a></li>";
                                 }
                             }
                         ?>
@@ -99,7 +99,7 @@
                 </div>
                 <div class="p-card-title">
                     <h2>TIỂU THUYẾT LÔI CUỐN</h2>
-                    <a href="">Xem ngay<i class="fa-solid fa-angle-right"></i></a>
+                    <a href="category_details.php?categories=22">Xem ngay<i class="fa-solid fa-angle-right"></i></a>
                 </div>
             </div>
 
@@ -109,7 +109,7 @@
                 </div>
                 <div class="p-card-title">
                     <h2>KỸ NĂNG SỐNG VÀ PHÁT TRIỂN</h2>
-                    <a href="">Xem ngay<i class="fa-solid fa-angle-right"></i></a>
+                    <a href="category_details.php?categories=26">Xem ngay<i class="fa-solid fa-angle-right"></i></a>
                 </div>
             </div>
 
@@ -119,7 +119,7 @@
                 </div>
                 <div class="p-card-title">
                     <h2>KHOA HỌC VÀ CÔNG NGHỆ</h2>
-                    <a href="">Xem ngay<i class="fa-solid fa-angle-right"></i></a>
+                    <a href="category_details.php?categories=25">Xem ngay<i class="fa-solid fa-angle-right"></i></a>
                 </div>
             </div>
             <div id="p-card-none" class="p-card">
@@ -129,7 +129,7 @@
                     </div>
                     <div class="p-card-title">
                         <h2>HƯỚNG DẪN VÀ TỰ HỌC</h2>
-                        <a href="">Xem ngay<i class="fa-solid fa-angle-right"></i></a>
+                        <a href="category_details.php?categories=30">Xem ngay<i class="fa-solid fa-angle-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -354,13 +354,12 @@ if ($result->num_rows > 0) {
         <div class="best-deals-container">
             <div class="b-d-c-title">
                 <ul>
-                    <li><a id="best-deals-active" href="">Best Deals<div class="best-deals-circle"></div></a></li>
-                    <li><a href="">Science fiction books</a></li>
-                    <li><a href="">Self-help books</a></li>
-                    <li><a href="">History books</a></li>
-                    <li><a href="">Anime manga</a></li>
-                    <li><a href="">Manual and self-study books</a></li>
-                    <li><a href="">Book of Poetry and Prose</a></li>
+                    <li><a id="best-deals-active" href="">Sách giá tốt<div class="best-deals-circle"></div></a></li>
+                    <li><a href="category_details.php?categories=22">Tiểu thuyết</a></li>
+                    <li><a href="category_details.php?categories=25">Khoa học và công nghệ</a></li>
+                    <li><a href="category_details.php?categories=26">Tâm lý học</a></li>
+                    <li><a href="category_details.php?categories=29">Kinh doanh và quản lý</a></li>
+                    <li><a href="category_details.php?categories=30">Hướng dẫn và tự học</a></li>
                 </ul>
             </div>
             <div class="b-d-c-main">
@@ -521,15 +520,15 @@ if ($result->num_rows > 0) {
             <div class="best-sellers-title">
                 <div class="b-s-title-left">
                     <ul>
-                        <li><a href="">Best Sellers</a></li>
+                        <li><a href="">Bán chạy nhất</a></li>
                     </ul>
                 </div>
                 <div class="b-s-title-right">
                     <ul>
                         <li><a id="b-s-title-right-active" href="">Top 20</a></li>
-                        <li><a href="">Science fiction books</a></li>
-                        <li><a href="">Self-help books</a></li>
-                        <li><a href="">History books</a></li>
+                        <li><a href="category_details.php?categories=22">Tiểu thuyết</a></li>
+                        <li><a href="category_details.php?categories=25">Khoa học và công nghệ</a></li>
+                        <li><a href="category_details.php?categories=26">Tâm lý học</a></li>
                     </ul>
                 </div>
             </div>
