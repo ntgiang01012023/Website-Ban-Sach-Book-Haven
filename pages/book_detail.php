@@ -53,19 +53,43 @@ if (isset($_SESSION['cart_success_message'])) {
         <div class="header-main-container">
             <div class="header-main">
                 <div class="main-logo">
-                    <div class="circle"></div>
-                    <h1>BookHaven</h1>
-                    <i class="fa-solid fa-bars"></i>
+                    <a href="index_home.php">
+                        <div class="circle"></div>
+                        <h1>BookHaven</h1>
+                        <i class="fa-solid fa-bars"></i>
+                    </a>
                 </div>
                 <div class="main-search">
-                    <input id="input-header" type="text" placeholder="Search for Products">
-                    <select name="books" id="books">
-                        <option value="">Tất cả danh mục</option>
-                        <option value="">Book 1</option>
-                        <option value="">Book 2</option>
-                        <option value="">Book 3</option>
-                    </select>
-                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <form action="category_details.php" method="GET">
+                        <input id="input-header" type="text" placeholder="Tìm kiếm sách tại đây...">
+
+                        <?php 
+
+// Truy vấn để lấy danh sách các danh mục
+$sql = "SELECT ID, Name FROM categories";
+$result = $conn->query($sql);
+
+// Kiểm tra và hiển thị danh mục trong thẻ select
+if ($result->num_rows > 0) {
+    echo '<select name="categories" id="categories">';
+    echo '<option value="">Tất cả danh mục</option>';
+
+    while ($row = $result->fetch_assoc()) {
+        $categoryID = $row["ID"];
+        $categoryName = $row["Name"];
+        echo '<option value="' . $categoryID . '">' . $categoryName . '</option>';
+    }
+
+    echo '</select>';
+} else {
+    echo "Không có danh mục nào.";
+}
+
+?>
+
+
+                        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
                 </div>
                 <div class="main-contact">
                     <a href="" class="tooltip" data-tooltip="Compare"><i class="fa-solid fa-code-compare"></i></a>
@@ -188,9 +212,9 @@ if ($bookTitle && $categoryName && $totalBooks) {
 
 
                 <div class="p-d-c-title">
-                    <h3>Trang chủ</h3>
+                    <a href="index_home.php">Trang chủ</a>
                     <h3><i class="fa-solid fa-angle-right"></i></h3>
-                    <span><?php echo $categoryName; ?></span>
+                    <span><a href=""><?php echo $categoryName; ?></a></span>
                     <h3><i class="fa-solid fa-angle-right"></i></h3>
                     <h3><?php echo $bookTitle; ?></h3>
                 </div>

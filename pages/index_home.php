@@ -38,8 +38,8 @@
                                     <div class="slider-text-details">
                                         <h1>ĐẮC NHÂN TÂM</h1>
                                         <h3>Khám phá bí quyết thành công trong giao tiếp và con người</h3>
-                                        <h4>99.000đ</h4>
-                                        <a href="">Bắt đầu mua sắm</a>
+                                        <h4>76.000đ</h4>
+                                        <a href="../pages/book_detail.php?bookID=36">Bắt đầu mua sắm</a>
                                     </div>
                                 </div>
                                 <div class="slider-img" data-aos="fade-left" data-aos-durantion="1000">
@@ -55,7 +55,7 @@
                                         <h1>NGHĨ VÀ LÀM GIÀU</h1>
                                         <h3>13 nguyên tắc nghĩ và làm giàu</h3>
                                         <h4>143.000đ</h4>
-                                        <a href="">Bắt đầu mua sắm</a>
+                                        <a href="../pages/book_detail.php?bookID=46">Bắt đầu mua sắm</a>
                                     </div>
                                 </div>
                                 <div class="slider-img">
@@ -71,8 +71,8 @@
                                         <h1>NHÀ GIẢ KIM</h1>
                                         <h3>Tìm kiếm giá trị đích thực của cuộc sống và bản thân
                                             diệu</h3>
-                                        <h4>199.000đ</h4>
-                                        <a href="">Bắt đầu mua sắm</a>
+                                        <h4>35.000đ</h4>
+                                        <a href="../pages/book_detail.php?bookID=25">Bắt đầu mua sắm</a>
                                     </div>
                                 </div>
                                 <div class="slider-img">
@@ -142,7 +142,7 @@
                 <h2>Ưu đãi đặc biệt</h2>
                 <img src="../pages/images/nha-gia-kim.png" alt="">
                 <p>Truyện Nhà Giả Kim của tác giả Paulo Coelho là một truyện hot trong tháng</p>
-                <h3>139.000đ</h3>
+                <h3>35.000đ</h3>
             </div>
             <div class="features-right">
                 <div class="features-right-title">

@@ -58,7 +58,7 @@ require_once "../config/config.php";
                     <form action="category_details.php" method="GET">
                         <input id="input-header" type="text" placeholder="Tìm kiếm sách tại đây...">
 
-                        <!-- <?php 
+                        <?php 
 
 // Truy vấn để lấy danh sách các danh mục
 $sql = "SELECT ID, Name FROM categories";
@@ -80,7 +80,7 @@ if ($result->num_rows > 0) {
     echo "Không có danh mục nào.";
 }
 
-?> -->
+?>
 
 
                         <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -90,8 +90,8 @@ if ($result->num_rows > 0) {
                     <a href="" class="tooltip" data-tooltip="Compare"><i class="fa-solid fa-code-compare"></i></a>
                     <div class="triangle"></div>
                     <a href="" class="tooltip" data-tooltip="Wishlist"><i class="fa-regular fa-heart"></i></a>
-                    <!-- <?php
-                        if(isset($_SESSION['username'])){?> -->
+                    <?php
+                        if(isset($_SESSION['username'])){?>
                     <button id="dropdown-account-active" onclick="showMenuAccount()"><i
                             class="fa-regular fa-user"></i></button>
                     <div id="dropdown-account" class="dropdown-account">
@@ -103,28 +103,28 @@ if ($result->num_rows > 0) {
                         <a class="dropdown-account-a" href="">Hồ sơ cá nhân</a>
                         <a class="dropdown-account-a" href="logout.php">Đăng xuất</a>
                     </div>
-                    <!-- <?php } else{?> -->
+                    <?php } else{?>
                     <a href="login_register.php" class="tooltip" data-tooltip="My Account"><i
                             class="fa-regular fa-user"></i></a>
-                    <!-- <?php }?> -->
+                    <?php }?>
 
                     <div class="main-contact-cart">
                         <a href="../pages/cart.php" class="tooltip-cart" data-tooltip="Cart"><i
                                 class="fa-solid fa-bag-shopping"></i></a>
 
-                        <!-- <?php
+                        <?php
     // Kiểm tra xem 'cart' đã tồn tại trong $_SESSION hay chưa
     $totalQuantity = 0;
     if (isset($_SESSION['cart'])) {
         $totalQuantity = array_sum(array_column($_SESSION['cart'], 'quantity'));
     }
-    ?> -->
+    ?>
 
                         <div class="quantity">
-                            <!-- <p><?php echo $totalQuantity; ?></p> -->
+                            <p><?php echo $totalQuantity; ?></p>
                         </div>
 
-                        <!-- <?php
+                        <?php
     $totalPrice = 0;
     if (isset($_SESSION['cart'])) {
         foreach ($_SESSION['cart'] as $item) {
@@ -134,8 +134,8 @@ if ($result->num_rows > 0) {
             $totalPrice += $subtotal;
         }
     }
-    ?> -->
-                        <!-- <p><?php echo number_format($totalPrice, 0, '.', ',') . 'đ'; ?></p> -->
+    ?>
+                        <p><?php echo number_format($totalPrice, 0, '.', ',') . 'đ'; ?></p>
                     </div>
 
 
@@ -167,7 +167,7 @@ if ($result->num_rows > 0) {
 
             <div class="p-d-container">
 
-                <!-- <?php
+                <?php
 $categoryID = $_GET['categories']; // Lấy giá trị categoryID từ tham số trên URL
 
 // Truy vấn để lấy tên danh mục
@@ -195,18 +195,18 @@ if ($resultCategory->num_rows > 0) {
 
 // Hiển thị tên danh mục và tổng số sách
 if ($categoryName && $totalBooks) {
-?> -->
+?>
 
                 <div class="p-d-c-title">
                     <a href="index_home.php">Trang chủ</a>
                     <h3><i class="fa-solid fa-angle-right"></i></h3>
                     <span><a href="">
-                      Sách hay nhất 2023
-                      <!-- <?php echo $categoryName; ?> -->
-                    </a></span>
+                            <?php echo $categoryName; ?>
+                        </a></span>
                     <h3><i class="fa-solid fa-angle-right"></i></h3>
                     <h3>
-                      Tìm kiếm kết quả cho "<!-- <?php echo $categoryName; ?> -->"
+                        Tìm kiếm kết quả cho "
+                        <?php echo $categoryName; ?>"
                     </h3>
                 </div>
                 <div class="p-d-c-main">
@@ -214,31 +214,30 @@ if ($categoryName && $totalBooks) {
                         <ul class="p-d-c-m-s-showcate">
                             <li><a href="">Tất cả danh mục <i class="fa-solid fa-angle-right"></i></a></li>
                             <li><a href="">
-                              <!-- <?php echo $categoryName; ?> (<?php echo $totalBooks; ?>) -->
-                              Tiểu thuyết (10)
-                            </a></li>
-                            <!-- <?php
+                                    <?php echo $categoryName; ?> (<?php echo $totalBooks; ?>)
+                                </a></li>
+                            <?php
 } else {
     echo "Không tìm thấy danh mục sách.";
 }
-?> -->
+?>
                         </ul>
                         <div class="p-d-c-m-s-banner">
-                          <img src="../pages/images/banner.jpg" alt="">
-                      </div>
-                      <div class="p-d-c-m-s-last-pro">
-                          <div class="p-d-c-m-s-last-pro-title">
-                              <h2>Sản phẩm mới nhất</h2>
-                              <div class="p-d-c-m-s-last-pro-title-line"></div>
-                          </div>
-      
-                          <!-- <?php
+                            <img src="../pages/images/banner.jpg" alt="">
+                        </div>
+                        <div class="p-d-c-m-s-last-pro">
+                            <div class="p-d-c-m-s-last-pro-title">
+                                <h2>Sản phẩm mới nhất</h2>
+                                <div class="p-d-c-m-s-last-pro-title-line"></div>
+                            </div>
+
+                            <?php
       // Truy vấn để lấy 3 sản phẩm được thêm mới gần nhất
       $sqlNewProducts = "SELECT books.Title, books.Price, books_images.ImageURL
                          FROM books
                          JOIN books_images ON books.ID = books_images.BookID
                          ORDER BY books.CreatedAt DESC
-                         LIMIT 3";
+                         LIMIT 6";
       
       
       $resultNewProducts = $conn->query($sqlNewProducts);
@@ -249,137 +248,43 @@ if ($categoryName && $totalBooks) {
               $imageURL = $rowNewProduct['ImageURL'];
               $title = $rowNewProduct['Title'];
               $price = $rowNewProduct['Price'];
-              ?> -->
-      
-                          <div class="p-d-c-m-s-last-pro-details">
-                              <div class="p-d-c-m-s-last-pro-details-img">
-                                  <img src="<?php echo $imageURL; ?>" alt="">
-                              </div>
-                              <div class="p-d-c-m-s-last-pro-content">
-                                  <h4>
-                                    Sách hay 2023
-                                    <!-- <?php echo $title; ?> -->
-                                  </h4>
-                                  <div class="p-d-c-m-s-last-pro-content-rating">
-                                      <i class="fa-solid fa-star"></i>
-                                      <i class="fa-solid fa-star"></i>
-                                      <i class="fa-solid fa-star"></i>
-                                      <i class="fa-solid fa-star"></i>
-                                      <i class="fa-solid fa-star"></i>
-                                  </div>
-                                  <h5>
-                                    <!-- <?php echo number_format($price, 0, '.', ',') . 'đ'; ?> -->
-                                    1.000.000đ
-                                  </h5>
-                              </div>
-                          </div>
+              ?>
 
-                          <div class="p-d-c-m-s-last-pro-details">
-                            <div class="p-d-c-m-s-last-pro-details-img">
-                                <img src="<?php echo $imageURL; ?>" alt="">
-                            </div>
-                            <div class="p-d-c-m-s-last-pro-content">
-                                <h4>
-                                  Sách hay 2023
-                                  <!-- <?php echo $title; ?> -->
-                                </h4>
-                                <div class="p-d-c-m-s-last-pro-content-rating">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
+                            <div class="p-d-c-m-s-last-pro-details">
+                                <div class="p-d-c-m-s-last-pro-details-img">
+                                    <img src="<?php echo $imageURL; ?>" alt="">
                                 </div>
-                                <h5>
-                                  <!-- <?php echo number_format($price, 0, '.', ',') . 'đ'; ?> -->
-                                  1.000.000đ
-                                </h5>
+                                <div class="p-d-c-m-s-last-pro-content">
+                                    <h4>
+                                        <?php echo $title; ?>
+                                    </h4>
+                                    <div class="p-d-c-m-s-last-pro-content-rating">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <h5>
+                                        <?php echo number_format($price, 0, '.', ',') . 'đ'; ?>
+                                    </h5>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="p-d-c-m-s-last-pro-details">
-                          <div class="p-d-c-m-s-last-pro-details-img">
-                              <img src="<?php echo $imageURL; ?>" alt="">
-                          </div>
-                          <div class="p-d-c-m-s-last-pro-content">
-                              <h4>
-                                Sách hay 2023
-                                <!-- <?php echo $title; ?> -->
-                              </h4>
-                              <div class="p-d-c-m-s-last-pro-content-rating">
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                              </div>
-                              <h5>
-                                <!-- <?php echo number_format($price, 0, '.', ',') . 'đ'; ?> -->
-                                1.000.000đ
-                              </h5>
-                          </div>
-                      </div>
+                            <?php } ?>
+                            <?php } ?>
 
-                      <div class="p-d-c-m-s-last-pro-details">
-                        <div class="p-d-c-m-s-last-pro-details-img">
-                            <img src="<?php echo $imageURL; ?>" alt="">
                         </div>
-                        <div class="p-d-c-m-s-last-pro-content">
-                            <h4>
-                              Sách hay 2023
-                              <!-- <?php echo $title; ?> -->
-                            </h4>
-                            <div class="p-d-c-m-s-last-pro-content-rating">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <h5>
-                              <!-- <?php echo number_format($price, 0, '.', ',') . 'đ'; ?> -->
-                              1.000.000đ
-                            </h5>
-                        </div>
-                    </div>
-
-                    <div class="p-d-c-m-s-last-pro-details">
-                      <div class="p-d-c-m-s-last-pro-details-img">
-                          <img src="<?php echo $imageURL; ?>" alt="">
-                      </div>
-                      <div class="p-d-c-m-s-last-pro-content">
-                          <h4>
-                            Sách hay 2023
-                            <!-- <?php echo $title; ?> -->
-                          </h4>
-                          <div class="p-d-c-m-s-last-pro-content-rating">
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                              <i class="fa-solid fa-star"></i>
-                          </div>
-                          <h5>
-                            <!-- <?php echo number_format($price, 0, '.', ',') . 'đ'; ?> -->
-                            1.000.000đ
-                          </h5>
-                      </div>
-                  </div>
-     
-                          <!-- <?php } ?>
-                          <?php } ?> -->
-      
-                      </div>
                     </div>
                     <div class="p-c-d-pro-container">
-                      <div class="p-c-d-p-box-title">
-                        <i id="cell-active" class="fa-solid fa-table-cells"></i>
-                        <i class="fa-solid fa-bars"></i>
-                        <i class="fa-solid fa-list"></i>
-                      </div>
-                      <div class="p-c-d-p-all-item">
-                      <div class="p-c-d-m-p-cards">
-                        <!-- <?php
+                        <div class="p-c-d-p-box-title">
+                            <i id="cell-active" class="fa-solid fa-table-cells"></i>
+                            <i class="fa-solid fa-bars"></i>
+                            <i class="fa-solid fa-list"></i>
+                        </div>
+                        <div class="p-c-d-p-all-item">
+
+                            <?php
         
         // Kiểm tra xem tham số "books" có được truyền vào không
         if (isset($_GET['categories'])) {
@@ -392,10 +297,7 @@ if ($categoryName && $totalBooks) {
             if ($categoryResult->num_rows > 0) {
                 $categoryRow = $categoryResult->fetch_assoc();
                 $categoryName = $categoryRow['Name'];
-        
-                // Hiển thị tiêu đề danh mục
-                echo "<h2>Danh sách sách trong danh mục: " . $categoryName . "</h2>";
-        
+                
                 // Truy vấn SQL để lấy sách từ danh mục
                 $sql = "SELECT categories.Name, books.ID, books.Title, books.Price, books.Discount, books_images.ImageURL
                         FROM categories
@@ -409,47 +311,43 @@ if ($categoryName && $totalBooks) {
                     while ($row = $result->fetch_assoc()) {
                         $discountedPrice = $row["Price"] - $row["Discount"]; // Tính giá sau giảm
                 $isDiscounted = $row["Discount"] > 0; // Kiểm tra sách có giảm giá hay không
-                        ?> -->
-                        <h3>
-                          <!-- <?php echo $row['Name']; ?> -->
-                          Sách hay 2023
-                        </h3>
-                        <p>
-                          <!-- <?php echo $row['Title']; ?> -->
-                          Sách hay 2023
-                        </p>
-                        <img src="../pages/images/kd1.jpg" alt="">
-                        <!-- <?php echo $row['ImageURL']; ?> -->
-                        <div class="details-money-shop">
-                            <!-- <?php if ($isDiscounted) { ?> -->
-                            <div class="d-m-shop-discount">
-                                <h4 class="discounted-price">
-                                    <!-- <?php echo number_format($discountedPrice, 0, '.', ',') . ' đ'; ?> -->
-                                    50.000đ
-                                </h4>
-                                <span
-                                    class="original-price">
-                                    <!-- <?php echo number_format($row["Price"], 0, '.', ',') . ' đ'; ?> -->
-                                    30.000đ
-                                  </span>
+                        ?>
+                            <div class="p-c-d-m-p-cards">
+                                <h3>
+                                    <?php echo $row['Name']; ?>
+                                </h3>
+                                <p>
+                                    <?php echo $row['Title']; ?>
+                                </p>
+                                <img src="<?php echo $row['ImageURL']; ?>" alt="">
+                                <div class="details-money-shop">
+                                    <?php if ($isDiscounted) { ?>
+                                    <div class="d-m-shop-discount">
+                                        <h4 class="discounted-price">
+                                            <?php echo number_format($discountedPrice, 0, '.', ',') . ' đ'; ?>
+                                        </h4>
+                                        <span class="original-price">
+                                            <?php echo number_format($row["Price"], 0, '.', ',') . ' đ'; ?>
+                                        </span>
+                                    </div>
+                                    <?php } else { ?>
+                                    <span class="original-price1">
+                                        <?php echo number_format($row["Price"], 0, '.', ',') . ' đ'; ?>
+
+                                    </span>
+                                    <?php } ?>
+                                    <a href="book_detail.php?bookID=<?php echo $row['ID']; ?>"><i
+                                            class="fa-solid fa-arrow-right"></i></a>
+
+                                </div>
+                                <div class="details-whislits">
+                                    <div class="d-w-i">
+                                        <a href=""><i class="fa-regular fa-heart"></i>Wishlist</a>
+                                        <a href=""><i class="fa-solid fa-code-compare"></i>Compare</a>
+                                    </div>
+                                </div>
                             </div>
-                            <!-- <?php } else { ?> -->
-                            <span class="original-price">
-                              <!-- <?php echo number_format($row["Price"], 0, '.', ',') . ' đ'; ?> -->
-                              
-                            </span>
-                            <!-- <?php } ?> -->
-                            <a href="book_detail.php?bookID=<?php echo $row['ID']; ?>"><i
-                                    class="fa-solid fa-arrow-right"></i></a>
-        
-                        </div>
-                        <div class="details-whislits">
-                          <div class="d-w-i">
-                            <a href=""><i class="fa-regular fa-heart"></i>Wishlist</a>
-                            <a href=""><i class="fa-solid fa-code-compare"></i>Compare</a>
-                          </div>
-                        </div>
-                        <!-- <?php
+                            <?php
                   }
               } else {
                   echo "<p>Không có sách trong danh mục này.</p>";
@@ -460,13 +358,13 @@ if ($categoryName && $totalBooks) {
       } else {
           echo "<p>Không tìm thấy danh mục.</p>";
       }
-      ?> -->
-                      </div> 
+      ?>
+
+                        </div>
                     </div>
-                  </div>
                 </div>
             </div>
         </section>
     </main>
 
-<!-- <?php include_once "../pages/includes/footer_pages.php"?> -->
+    <?php include_once "../pages/includes/footer_pages.php"?>

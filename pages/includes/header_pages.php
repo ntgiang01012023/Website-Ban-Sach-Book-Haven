@@ -26,9 +26,11 @@
                 </div>
                 <div class="top-right">
                     <ul>
-                        <li><a href=""><i class="fa-solid fa-location-dot"></i>Vị trí</a></li>
+                        <li><a href="https://www.google.com/maps/@21.0010802,105.8400229,16z?entry=ttu"><i
+                                    class="fa-solid fa-location-dot"></i>Vị trí</a></li>
                         <li><a href="">|<i class="fa-solid fa-truck-fast"></i>Theo dõi đơn hàng</a></li>
-                        <li><a href="">|<i class="fa-solid fa-bag-shopping"></i>Cửa hàng</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=8Ev2LrVaUfA">|<i
+                                    class="fa-solid fa-bag-shopping"></i>Cửa hàng</a></li>
                         <?php
                         session_start();
                         if(isset($_SESSION['username'])){?>
@@ -44,14 +46,17 @@
         <div class="header-main-container">
             <div class="header-main">
                 <div class="main-logo">
-                    <div class="circle"></div>
-                    <h1>BookHaven</h1>
-                    <i class="fa-solid fa-bars"></i>
+                    <a href="index_home.php">
+                        <div class="circle"></div>
+                        <h1>BookHaven</h1>
+                        <i class="fa-solid fa-bars"></i>
+                    </a>
                 </div>
                 <div class="main-search">
-                    <input id="input-header" type="text" placeholder="Tìm kiếm sách tại đây...">
+                    <form action="category_details.php" method="GET">
+                        <input id="input-header" type="text" placeholder="Tìm kiếm sách tại đây...">
 
-                    <?php 
+                        <?php 
 
 // Truy vấn để lấy danh sách các danh mục
 $sql = "SELECT ID, Name FROM categories";
@@ -59,7 +64,7 @@ $result = $conn->query($sql);
 
 // Kiểm tra và hiển thị danh mục trong thẻ select
 if ($result->num_rows > 0) {
-    echo '<select name="books" id="books">';
+    echo '<select name="categories" id="categories">';
     echo '<option value="">Tất cả danh mục</option>';
 
     while ($row = $result->fetch_assoc()) {
@@ -76,7 +81,8 @@ if ($result->num_rows > 0) {
 ?>
 
 
-                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
                 </div>
 
 
@@ -204,9 +210,11 @@ if ($result->num_rows > 0) {
                             </nav>
                         </div>
                     </li>
-                    <li><a href="">Thương hiệu nổi bật</a></li>
-                    <li><a href="">Xu hướng phong cách</a></li>
-                    <li><a href="">Quà tặng</a></li>
+                    <li><a href="https://vnexpress.net/4-thuong-hieu-lam-sach-tai-viet-nam-3210823.html">Thương hiệu nổi
+                            bật</a></li>
+                    <li><a href="https://baophutho.vn/van-de-hom-nay/xu-huong-doc-sach-hien-nay/157147.html">Xu hướng
+                            phong cách</a></li>
+                    <li><a href="https://www.facebook.com/mcbooksvn/posts/1165316650293091/">Quà tặng</a></li>
                 </ul>
                 <ul class="right">
                     <li><a id="free-right" href="">Giao hàng miễn phí cho đơn hàng 500.000đ trở lên</a></li>
