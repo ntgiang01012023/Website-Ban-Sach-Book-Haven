@@ -566,15 +566,22 @@ if ($similar_books_result->num_rows > 0) {
 
                                     </div>
                                     <div class="p-c-d-m-pro-c-b-a-c-wishlist">
-                                        <div class="p-c-d-m-pro-c-b-a-c-w-all">
-                                            <div class="p-c-d-m-pro-c-b-a-c-w-dt">
-                                                <i class="fa-regular fa-heart"></i>
-                                                <p>Wishlist</p>
-                                            </div>
-                                            <div class="p-c-d-m-pro-c-b-a-c-w-dt">
-                                                <i class="fa-solid fa-code-compare"></i>
-                                                <p>Compare</p>
-                                            </div>
+                                        <div class="d-t-w-c">
+                                            <!-- Trong wishlist.php -->
+                                            <form method="post" action="wishlist.php">
+                                                <button class="wishlist" type="submit" name="wishlist"
+                                                    value="<?php echo $row['ID']; ?>"><i
+                                                        class="fa-regular fa-heart"></i>Wishlist</button>
+                                                <!-- ... -->
+                                            </form>
+
+                                            <!-- Trong compare.php -->
+                                            <form method="POST" action="compare.php">
+                                                <button class="compare" type="submit" name="compare"
+                                                    value="<?php echo $row['ID']; ?>"><i
+                                                        class="fa-solid fa-code-compare"></i>Compare</button>
+                                                <!-- ... -->
+                                            </form>
                                         </div>
                                     </div>
                                 </div>

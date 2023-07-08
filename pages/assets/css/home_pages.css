@@ -1344,6 +1344,10 @@ h4.discounted-price {
 
 .details-whislits {
     display: none;
+}
+
+.d-t-w-c {
+    display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
@@ -2519,6 +2523,18 @@ footer {
     color: var(--bs-dark);
 }
 
-/* @media screen and (min-width: 1920px) {
+/* Wishlist and Compare */
 
-} */
+.wishlist, .compare {
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    color: var(--bs-gray);
+    cursor: pointer;
+}
+
+.wishlist i, .compare i {
+    margin-right: 5px;
+}
+
+

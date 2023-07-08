@@ -87,9 +87,11 @@ if ($result->num_rows > 0) {
 
 
                 <div class="main-contact">
-                    <a href="" class="tooltip" data-tooltip="Compare"><i class="fa-solid fa-code-compare"></i></a>
+                    <a href="compare.php" class="tooltip" data-tooltip="Compare"><i
+                            class="fa-solid fa-code-compare"></i></a>
                     <div class="triangle"></div>
-                    <a href="" class="tooltip" data-tooltip="Wishlist"><i class="fa-regular fa-heart"></i></a>
+                    <a href="wishlist.php" class="tooltip" data-tooltip="Wishlist"><i
+                            class="fa-regular fa-heart"></i></a>
                     <?php
                         if(isset($_SESSION['username'])){?>
                     <button id="dropdown-account-active" onclick="showMenuAccount()"><i

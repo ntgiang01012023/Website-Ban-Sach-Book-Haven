@@ -1320,6 +1320,7 @@ a.tooltip-cart:hover::after {
     display: none;
     width: 100%;
     height: 40px;
+    padding-top: 20px;
 }
 
 .p-c-d-m-pro-c-b-a-c-w-all {
@@ -1473,9 +1474,7 @@ a.tooltip-cart:hover::after {
 }
 
 .d-w-i {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;    
+    width: 100%;
 }
 
 .p-c-d-m-p-cards:hover .details-whislits {
@@ -2198,4 +2197,25 @@ footer {
 
 .f-c-bottom h3 i {
     margin-right: 10px;
+}
+
+
+/* Wishlist and Compare */
+
+.wishlist, .compare {
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    color: var(--bs-gray);
+    cursor: pointer;
+}
+
+.wishlist i, .compare i {
+    margin-right: 5px;
+}
+
+.d-t-w-c {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
