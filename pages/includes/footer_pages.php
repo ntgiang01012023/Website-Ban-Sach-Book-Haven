@@ -54,18 +54,18 @@ linkedin "><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <div class="f-c-main-right-column">
                     <h3>Tất cả trang</h3>
-                    <li><a href="">Giới thiệu</a></li>
-                    <li><a href="">Liên hệ</a></li>
+                    <li><a href="about.php">Giới thiệu</a></li>
+                    <li><a href="contact.php">Liên hệ</a></li>
                     <li><a href="">Yêu thích</a></li>
                     <li><a href="">So sánh</a></li>
-                    <li><a href="">FAQ</a></li>
+                    <li><a href="faq.php">FAQ</a></li>
                 </div>
                 <div class="f-c-main-right-column-right">
                     <h3>Chăm sóc khách hàng</h3>
-                    <li><a href="">Tài khoản</a></li>
+                    <li><a href="my_account.php">Tài khoản</a></li>
                     <li><a href="">Theo dõi đơn hàng</a></li>
                     <li><a href="">Dịch vụ khách hàng</a></li>
-                    <li><a href="">FAQs</a></li>
+                    <li><a href="faq.php">FAQs</a></li>
                     <li><a href="">Hổ trợ khách hàng</a></li>
                 </div>
             </div>

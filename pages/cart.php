@@ -114,14 +114,36 @@ if (isset($_GET['action']) && isset($_GET['book_id'])) {
                     <i class="fa-solid fa-bars"></i>
                 </div>
                 <div class="main-search">
-                    <input id="input-header" type="text" placeholder="Search for Products">
-                    <select name="books" id="books">
-                        <option value="">Tất cả danh mục</option>
-                        <option value="">Book 1</option>
-                        <option value="">Book 2</option>
-                        <option value="">Book 3</option>
-                    </select>
-                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <form action="category_details.php" method="GET">
+                        <input id="input-header" type="text" placeholder="Tìm kiếm sách tại đây...">
+
+                        <?php 
+
+// Truy vấn để lấy danh sách các danh mục
+$sql = "SELECT ID, Name FROM categories";
+$result = $conn->query($sql);
+
+// Kiểm tra và hiển thị danh mục trong thẻ select
+if ($result->num_rows > 0) {
+    echo '<select name="categories" id="categories">';
+    echo '<option value="">Tất cả danh mục</option>';
+
+    while ($row = $result->fetch_assoc()) {
+        $categoryID = $row["ID"];
+        $categoryName = $row["Name"];
+        echo '<option value="' . $categoryID . '">' . $categoryName . '</option>';
+    }
+
+    echo '</select>';
+} else {
+    echo "Không có danh mục nào.";
+}
+
+?>
+
+
+                        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
                 </div>
                 <div class="main-contact">
                     <a href="" class="tooltip" data-tooltip="Compare"><i class="fa-solid fa-code-compare"></i></a>
@@ -184,12 +206,17 @@ if (isset($_GET['action']) && isset($_GET['book_id'])) {
         <div class="header-bottom-2">
             <div class="h-b-container">
                 <ul>
-                    <li><a href="">Trang chủ<i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li><a href="">Tiểu thuyết<i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li><a href="">Khoa học<i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li><a href="">Phiêu lưu<i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li><a href="">Lịch sử<i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li><a href="">Tâm lý<i class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="index_home.php">Trang chủ<i class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="category_details.php?categories=22">Tiểu thuyết<i
+                                class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="category_details.php?categories=25">Khoa học<i
+                                class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="category_details.php?categories=26">Tâm lý học<i
+                                class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="category_details.php?categories=29">Kinh doanh<i
+                                class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="category_details.php?categories=30">Hướng dẫn<i
+                                class="fa-solid fa-chevron-down"></i></a></li>
                 </ul>
             </div>
         </div>

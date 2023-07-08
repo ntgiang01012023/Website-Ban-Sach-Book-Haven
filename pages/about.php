@@ -1,10 +1,4 @@
-<?php require_once "../config/config.php";
-
-session_start();
-
-
-
-?>
+<?php require_once "../config/config.php" ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +7,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Haven</title>
-    <link rel="stylesheet" href="../pages/assets/css/home_pages.css">
+    <link rel="stylesheet" href="../pages/assets/css/product_detail.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,7 +32,7 @@ session_start();
                         <li><a href="">|<i class="fa-solid fa-truck-fast"></i>Theo dõi đơn hàng</a></li>
                         <li><a href="">|<i class="fa-solid fa-bag-shopping"></i>Cửa hàng</a></li>
                         <?php
-                        
+                        session_start();
                         if(isset($_SESSION['username'])){?>
                         <li><a href="my_account.php">|<i class="fa-solid fa-user"></i>Tài khoản</a>
                             <?php } else{?>
@@ -167,92 +161,117 @@ if ($result->num_rows > 0) {
 
     </header>
 
-
     <main>
-        <div class="accounts-pages-container">
-
-            <div class="accounts-pages">
-                <div class="a-p-title">
-                    <h2>Trang chủ > Tài khoản</h2>
+        <section id="ab">
+            <div class="ab-title">
+                <h1>Giới thiệu</h1>
+                <p>Niềm đam mê có thể là sự quan tâm thân thiện hoặc háo hức hoặc ngưỡng mộ đối với một đề xuất, nguyên
+                    nhân, khám phá hoặc hoạt động hoặc tình yêu đối với cảm giác phấn khích bất thường.</p>
+            </div>
+        </section>
+        <section id="feat">
+            <div class="ft-container">
+                <div class="ft-card">
+                    <img src="../pages/images/ab2.jpg" alt="">
+                    <h3>Chúng ta thực sự làm gì?</h3>
+                    <p>Donec libero dolor, tincidunt id laoreet vitae,
+                        ullamcorper eu tortor. Maecenas pellentesque,
+                        dui vitae iaculis mattis, tortor nisi faucibus magna,
+                        vitae ultrices lacus purus vitae metus.</p>
                 </div>
-                <div class="a-p-all">
-                    <div class="a-p-circle-or">or</div>
-                    <div class="a-p-login">
-                        <div class="a-p-login-line">
-                            <h2>Đăng nhập</h2>
-                        </div>
-                        <p>Chào mừng trở lại! Đăng nhập vào tài khoản của bạn.</p>
-
-                        <form action="login.php" method="POST">
-                            <label for="username">Tên người dùng hoặc địa chỉ email *</label><br>
-                            <input class="input-field" type="text" id="username" name="username" required><br>
-
-                            <label for="password">Mật khẩu *</label><br>
-                            <input class="input-field" type="password" id="password" name="password" required><br>
-
-
-                            <!-- Hiển thị thông báo thành công (nếu có) -->
-                            <?php 
-                            
-                            if (isset($_SESSION['error_message'])) {
-                                $error_message = $_SESSION['error_message'];
-                                unset($_SESSION['error_message']); // Xóa thông báo sau khi đã hiển thị
-                            }
-                            if (isset($error_message)): ?>
-                            <p style="color: red; font-weight: 600;"><?php echo $error_message; ?></p>
-                            <?php endif; ?>
-
-
-                            <input type="checkbox" id="rememberPassword" name="rememberPassword">
-                            <label for="rememberPassword">Ghi nhớ mật khẩu</label><br>
-
-                            <button id="btn-login" type="submit">Đăng nhập</button><br>
-
-                            <a href="">Quên mật khẩu?</a>
-                        </form>
-                        <div class="a-p-login-other">
-                            <h3>Hoặc đăng nhập với</h3>
-                            <a href="https://accounts.google.com/login" class="google-login-button">
-                                <img src="../pages/images/icongg.png" alt="Google Icon">
-                                Đăng nhập bằng Google
-                            </a>
-                            <a href="https://www.facebook.com/login" class="facebook-login-button">
-                                <img src="../pages/images/iconfb.png" alt="Facebook Icon">
-                                Đăng nhập bằng Facebook
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="a-p-register">
-                        <div class="a-p-register-line">
-                            <h2>Đăng ký</h2>
-                        </div>
-                        <p>Tạo tài khoản mới ngay hôm nay để gặt hái những lợi ích của trải nghiệm mua sắm được cá nhân
-                            hóa.
-                        </p>
-                        <form action="register.php" method="POST">
-                            <label for="username">Tên người dùng *</label><br>
-                            <input class="input-field" type="text" id="username" name="username" required><br>
-
-                            <label for="username">Địa chỉ Email *</label><br>
-                            <input class="input-field" type="email" id="email" name="email" required><br>
-
-                            <label for="password">Mật khẩu *</label><br>
-                            <input class="input-field" type="password" id="password" name="password" required><br>
-
-                            <p id="p-register">Dữ liệu cá nhân của bạn sẽ được sử dụng để hỗ trợ trải nghiệm của bạn
-                                trên
-                                toàn bộ trang web này, để quản lý quyền truy cập vào tài khoản của bạn và cho các mục
-                                đích
-                                khác được mô tả trong chính sách bảo mật của chúng tôi.</p>
-
-                            <button id="btn-register" type="submit">Register</button><br>
-                        </form>
-
-                    </div>
+                <div class="ft-card">
+                    <img src="../pages/images/ab3.jpg" alt="">
+                    <h3>Tầm nhìn của chúng tôi</h3>
+                    <p>Donec libero dolor, tincidunt id laoreet vitae,
+                        ullamcorper eu tortor. Maecenas pellentesque,
+                        dui vitae iaculis mattis, tortor nisi faucibus magna,
+                        vitae ultrices lacus purus vitae metus.</p>
+                </div>
+                <div class="ft-card">
+                    <img src="../pages/images/ab4.jpg" alt="">
+                    <h3>Lịch sử bắt đầu</h3>
+                    <p>Donec libero dolor, tincidunt id laoreet vitae,
+                        ullamcorper eu tortor. Maecenas pellentesque,
+                        dui vitae iaculis mattis, tortor nisi faucibus magna,
+                        vitae ultrices lacus purus vitae metus.</p>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <section id="hiring">
+            <div class="hr-container">
+                <div class="hr-card">
+                    <img src="../pages/images/ab5.jpg" alt="">
+                    <h3>Thomas Snow</h3>
+                    <p>CEO/Founder</p>
+                </div>
+                <div class="hr-card">
+                    <img src="../pages/images/ab6.jpg" alt="">
+                    <h3>Anna Baranov</h3>
+                    <p>Client Care</p>
+                </div>
+                <div class="hr-card">
+                    <img src="../pages/images/ab7.jpg" alt="">
+                    <h3>Andre Kowalsy</h3>
+                    <p>Support Boss</p>
+                </div>
+                <div class="hr-card">
+                    <img src="../pages/images/ab8.jpg" alt="">
+                    <h3>Pamela Doe</h3>
+                    <p>Delivery Driver</p>
+                </div>
+                <div class="hr-card">
+                    <img src="../pages/images/ab9.jpg" alt="">
+                    <h3>Susan McCain</h3>
+                    <p>Packaging Girl</p>
+                </div>
+                <div class="hr-card">
+                    <img src="../pages/images/ab10.png" alt="">
+                    <a href="">Xem chi tiết</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="details">
+            <div class="dt-container">
+                <div class="dt-column">
+                    <h3>Chúng ta thực sự làm gì?</h3>
+                    <p>Donec libero dolor, tincidunt id laoreet vitae, ullamcorper eu tra tấn. Maecenas pellentesque,
+                        dui vitae iaculis mattis, tortor nisi faucibus magna, vitae ultrices lacus purus vitae metus. Ut
+                        nec odio facilisis, ultricies nunc eget, fringilla orci.</p>
+                    <h3>Lịch sử của Công ty</h3>
+                    <p>Mauris rhoncus aliquet purus, a ornare nisi euismod in. Interdum et malesuada fames ac ante ipsum
+                        primis in faucibus. Etiam imperdiet eu metus vel ornare. Nullam in risus vel orci feugiat
+                        vestibulum. In sed aliquam mi. Nullam condimentum sollicitudin dui.</p>
+                </div>
+                <div class="dt-column">
+                    <h3>Tầm nhìn của chúng tôi</h3>
+                    <p>Donec libero dolor, tincidunt id laoreet vitae, ullamcorper eu tra tấn. Maecenas pellentesque,
+                        dui vitae iaculis mattis, tortor nisi faucibus magna, vitae ultrices lacus purus vitae metus. Ut
+                        nec odio facilisis, ultricies nunc eget, fringilla orci.</p>
+                    <h3>Hợp tác với chúng tôi!</h3>
+                    <p>Donec libero dolor, tincidunt id laoreet vitae, ullamcorper eu tortor. Maecenas pellentesque, dui
+                        vitae iaculis mattis, tortor nisi faucibus magna, vitae ultrices lacus purus vitae metus. Ut nec
+                        odio facilisis, ultricies nunc eget, fringilla orci.</p>
+                </div>
+                <div class="dt-column">
+                    <h3>Chúng tôi có thể giúp gì cho bạn ?</h3>
+                    <a href=""><i class="fa-solid fa-minus"></i>Hỗ trợ 24/7</a>
+                    <p>Vestibulum velit nibh, egestas vel faucibus vitae, feugiat sollicitudin urna. Praesent iaculis id
+                        ipsum sit amet pretium. Aliquam tristique sapien nec enim euismod, scelerisque facilisis arcu
+                        consectetur.</p>
+                    <a href=""><i class="fa-solid fa-plus"></i>Chất lượng tốt nhất</a>
+                    <a href=""><i class="fa-solid fa-plus"></i>Chăm sóc khách hàng</a>
+                    <a href=""><i class="fa-solid fa-plus"></i>Hơn 200 khách hàng hài lòng</a>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
     </main>
+
 
     <?php include_once "../pages/includes/footer_pages.php"?>

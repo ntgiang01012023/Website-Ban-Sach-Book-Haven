@@ -153,12 +153,17 @@ if ($result->num_rows > 0) {
         <div class="header-bottom-2">
             <div class="h-b-container">
                 <ul>
-                    <li><a href="">Trang chủ<i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li><a href="">Tiểu thuyết<i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li><a href="">Khoa học<i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li><a href="">Phiêu lưu<i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li><a href="">Lịch sử<i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li><a href="">Tâm lý<i class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="index_home.php">Trang chủ<i class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="category_details.php?categories=22">Tiểu thuyết<i
+                                class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="category_details.php?categories=25">Khoa học<i
+                                class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="category_details.php?categories=26">Tâm lý học<i
+                                class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="category_details.php?categories=29">Kinh doanh<i
+                                class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="category_details.php?categories=30">Hướng dẫn<i
+                                class="fa-solid fa-chevron-down"></i></a></li>
                 </ul>
             </div>
         </div>

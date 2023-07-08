@@ -143,12 +143,17 @@ if ($result->num_rows > 0) {
         <div class="header-bottom-2">
             <div class="h-b-container">
                 <ul>
-                    <li><a href="">Trang chủ<i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li><a href="">Tiểu thuyết<i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li><a href="">Khoa học<i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li><a href="">Phiêu lưu<i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li><a href="">Lịch sử<i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li><a href="">Tâm lý<i class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="index_home.php">Trang chủ<i class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="category_details.php?categories=22">Tiểu thuyết<i
+                                class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="category_details.php?categories=25">Khoa học<i
+                                class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="category_details.php?categories=26">Tâm lý học<i
+                                class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="category_details.php?categories=29">Kinh doanh<i
+                                class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="category_details.php?categories=30">Hướng dẫn<i
+                                class="fa-solid fa-chevron-down"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -157,69 +162,81 @@ if ($result->num_rows > 0) {
     </header>
 
     <main>
-        
-        <section id="faq">
-            <div class="f-container">         
-                <div class="f-t-container">
-                    <a href="">Trang chủ</a>
-                    <i class="fa-solid fa-chevron-right"></i>
-                    <a href="">FAQ</a>                 
+
+        <section id="contact-title">
+            <div class="c-t-container">
+                <a href="">Trang chủ</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <a href="">Liên hệ</a>
+            </div>
+        </section>
+
+        <section id="contact-map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.593303940039!2d-0.15470444843858283!3d51.53901886611164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761ae62edd5771%3A0x27f2d823e2be0249!2sPrincess+Rd%2C+London+NW1+8JR%2C+UK!5e0!3m2!1sen!2s!4v1458827996435"
+                width="600" height="514" style="border: 0px; pointer-events: none;" allowfullscreen=""></iframe>
+        </section>
+
+        <section id="contact-mess">
+            <div class="c-m-container">
+                <div class="c-m-left">
+                    <div class="c-m-l-title">
+                        <h1>Để lại tin nhắn cho chúng tôi</h1>
+                    </div>
+
+                    <div class="c-m-l-pa">
+                        <p>Maecenas dolor elit, semper a sem sed, pulvinar molestie lacus. Aliquam dignissim, elit non
+                            mattis ultrices,
+                            neque odio ultricies tellus, eu porttitor nisl ipsum eu massa.</p>
+                    </div>
+
+                    <form action="">
+                        <label for="">Họ và tên</label>
+                        <div class="c-m-l-form-name">
+                            <input type="text" placeholder="Họ của bạn">
+                            <input type="text" placeholder="Tên của bạn">
+                        </div>
+                        <label for="">Địa chỉ Email</label>
+                        <input type="text" placeholder="Email của bạn">
+                        <label for="">Nội dung của tin nhắn</label>
+                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                        <button type="button">Gửi tin nhắn</button>
+                    </form>
+
                 </div>
-                <div class="faq-title-main">
-                    <h1>Các câu hỏi thường gặp</h1>
-                    <p>Thỏa thuận này được sửa đổi lần cuối vào ngày 18 tháng 2 năm 2016</p>
-                </div>
-                <div class="f-shipping">
-                    <h3>Thông tin vận chuyển</h3>
-                </div>
-                <div class="f-question">
-                    <div class="f-q-column">
-                        <h4>Phương thức vận chuyển nào có sẵn?</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sapien lorem, consectetur et turpis id, blandit interdum metus. Morbi sed ligula id elit mollis efficitur ut nec ligula. Proin erat magna, pellentesque at elementum at, eleifend a tortor.</p>
-                        <h4>Làm cách nào để theo dõi đơn hàng của tôi?</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sapien lorem, consectetur et turpis id, blandit interdum metus. Morbi sed ligula id elit mollis efficitur ut nec ligula. Proin erat magna, pellentesque at elementum at, eleifend a tortor.</p>
+
+
+
+
+                <div class="c-m-right">
+                    <div class="c-m-r-title">
+                        <h1>Cửa hàng</h1>
                     </div>
-                    <div class="f-q-column">
-                        <h4>Mất bao lâu để nhận được gói hàng của tôi?</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sapien lorem, consectetur et turpis id, blandit interdum metus. Morbi sed ligula id elit mollis efficitur ut nec ligula. Proin erat magna, pellentesque at elementum at, eleifend a tortor.</p>
-                        <h4>Tôi có cần một tài khoản để đặt hàng không?</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sapien lorem, consectetur et turpis id, blandit interdum metus. Morbi sed ligula id elit mollis efficitur ut nec ligula. Proin erat magna, pellentesque at elementum at, eleifend a tortor.</p>
+                    <div class="c-m-r-text1">
+                        <p>17 Princess Road <br>
+                            London, Greater London<br>
+                            NW1 8JR, UK</p>
                     </div>
-                </div>
-                <div class="faq-title-main1">
-                    <h1>Các câu hỏi thường gặp thứ hai</h1>
-                </div>
-                <div class="f-second">
-                    <div class="f-s-box">
-                        <h3>Phương thức vận chuyển nào có sẵn?</h3>
-                        <i class="fa-solid fa-chevron-down"></i>
+
+                    <div class="c-m-r-text2">
+                        <h4>Giờ hoạt động</h4>
+                        <p>Monday:12-6 PM <br>
+                            Tuesday:12-6 PM<br>
+                            Wednesday:12-6 PM<br>
+                            Thursday:12-6 PM<br>
+                            Friday:12-6 PM<br>
+                            Saturday:12-6 PM<br>
+                            SundayClosed</p>
                     </div>
-                    <div class="f-s-box">
-                        <h3>Mất bao lâu để nhận được gói hàng của tôi?</h3>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="f-s-box">
-                        <h3>Làm cách nào để theo dõi đơn hàng của tôi?</h3>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="f-s-box">
-                        <h3>Tôi phải làm thế nào để đặt hàng?</h3>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="f-s-box">
-                        <h3>Tôi nên liên hệ như thế nào nếu tôi có bất kỳ câu hỏi nào?</h3>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="f-s-box">
-                        <h3>Tôi có cần một tài khoản để đặt hàng không?</h3>
-                        <i class="fa-solid fa-chevron-down"></i>
+
+                    <div class="c-m-r-text2">
+                        <h4>Nghề nghiệp</h4>
+                        <p>Nếu bạn quan tâm đến các cơ hội việc làm tại Electro, vui lòng gửi email cho chúng tôi:
+                            contact@yourstore.com</p>
                     </div>
                 </div>
             </div>
-
         </section>
-    
-        
 
     </main>
 

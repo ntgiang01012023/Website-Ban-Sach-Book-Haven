@@ -143,12 +143,17 @@ if ($result->num_rows > 0) {
         <div class="header-bottom-2">
             <div class="h-b-container">
                 <ul>
-                    <li><a href="">Trang chủ<i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li><a href="">Tiểu thuyết<i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li><a href="">Khoa học<i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li><a href="">Phiêu lưu<i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li><a href="">Lịch sử<i class="fa-solid fa-chevron-down"></i></a></li>
-                    <li><a href="">Tâm lý<i class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="index_home.php">Trang chủ<i class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="category_details.php?categories=22">Tiểu thuyết<i
+                                class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="category_details.php?categories=25">Khoa học<i
+                                class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="category_details.php?categories=26">Tâm lý học<i
+                                class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="category_details.php?categories=29">Kinh doanh<i
+                                class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="category_details.php?categories=30">Hướng dẫn<i
+                                class="fa-solid fa-chevron-down"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -157,13 +162,13 @@ if ($result->num_rows > 0) {
     </header>
 
     <main>
-        
+
         <section id="faq">
-            <div class="f-container">         
+            <div class="f-container">
                 <div class="f-t-container">
                     <a href="">Trang chủ</a>
                     <i class="fa-solid fa-chevron-right"></i>
-                    <a href="">FAQ</a>                 
+                    <a href="">FAQ</a>
                 </div>
                 <div class="faq-title-main">
                     <h1>Các câu hỏi thường gặp</h1>
@@ -175,15 +180,23 @@ if ($result->num_rows > 0) {
                 <div class="f-question">
                     <div class="f-q-column">
                         <h4>Phương thức vận chuyển nào có sẵn?</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sapien lorem, consectetur et turpis id, blandit interdum metus. Morbi sed ligula id elit mollis efficitur ut nec ligula. Proin erat magna, pellentesque at elementum at, eleifend a tortor.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sapien lorem, consectetur
+                            et turpis id, blandit interdum metus. Morbi sed ligula id elit mollis efficitur ut nec
+                            ligula. Proin erat magna, pellentesque at elementum at, eleifend a tortor.</p>
                         <h4>Làm cách nào để theo dõi đơn hàng của tôi?</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sapien lorem, consectetur et turpis id, blandit interdum metus. Morbi sed ligula id elit mollis efficitur ut nec ligula. Proin erat magna, pellentesque at elementum at, eleifend a tortor.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sapien lorem, consectetur
+                            et turpis id, blandit interdum metus. Morbi sed ligula id elit mollis efficitur ut nec
+                            ligula. Proin erat magna, pellentesque at elementum at, eleifend a tortor.</p>
                     </div>
                     <div class="f-q-column">
                         <h4>Mất bao lâu để nhận được gói hàng của tôi?</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sapien lorem, consectetur et turpis id, blandit interdum metus. Morbi sed ligula id elit mollis efficitur ut nec ligula. Proin erat magna, pellentesque at elementum at, eleifend a tortor.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sapien lorem, consectetur
+                            et turpis id, blandit interdum metus. Morbi sed ligula id elit mollis efficitur ut nec
+                            ligula. Proin erat magna, pellentesque at elementum at, eleifend a tortor.</p>
                         <h4>Tôi có cần một tài khoản để đặt hàng không?</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sapien lorem, consectetur et turpis id, blandit interdum metus. Morbi sed ligula id elit mollis efficitur ut nec ligula. Proin erat magna, pellentesque at elementum at, eleifend a tortor.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sapien lorem, consectetur
+                            et turpis id, blandit interdum metus. Morbi sed ligula id elit mollis efficitur ut nec
+                            ligula. Proin erat magna, pellentesque at elementum at, eleifend a tortor.</p>
                     </div>
                 </div>
                 <div class="faq-title-main1">
@@ -218,8 +231,8 @@ if ($result->num_rows > 0) {
             </div>
 
         </section>
-    
-        
+
+
 
     </main>
 
