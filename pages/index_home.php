@@ -781,6 +781,15 @@ if ($result->num_rows > 0) {
         </div>
     </section>
 
+    <section id="banner">
+        <div class="b-container">
+            <h1>Siêu giảm giá <span>lớn nhất</span> tháng qua</h1>
+            <a href="">Giảm giá lớn</a>
+            <img src="../pages/images/kd1.jpg" alt="">
+        </div>
+
+    </section>
+
 </main>
 
 <?php include_once "../pages/includes/footer_pages.php"?>
