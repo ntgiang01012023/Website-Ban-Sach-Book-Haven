@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 30, 2023 lúc 12:02 PM
+-- Thời gian đã tạo: Th7 09, 2023 lúc 05:17 AM
 -- Phiên bản máy phục vụ: 10.4.27-MariaDB
 -- Phiên bản PHP: 8.2.0
 
@@ -61,7 +61,11 @@ INSERT INTO `books` (`ID`, `Title`, `Author`, `Description`, `Price`, `CategoryI
 (42, 'Giết Con Chim Nhại (Tái Bản 2019)', 'Harper Lee', 'Giết Con Chim Nhại (Tái Bản 2019)', '96000.00', 26, '', '0.00', '2023-06-28 15:01:58'),
 (43, 'Ông Già Và Biển Cả (Tái Bản 2018)', 'Ernest Hemingway', 'Ông Già Và Biển Cả (Tái Bản 2018)', '31000.00', 26, '', '0.00', '2023-06-28 15:02:52'),
 (44, 'Suối Nguồn (Tái Bản 2018)', 'Ayn Rand', 'Suối Nguồn (Tái Bản 2018)', '284000.00', 26, '', '0.00', '2023-06-28 15:03:34'),
-(45, 'Cho Tôi Xin Một Vé Đi Tuổi Thơ', 'Nguyễn Nhật Ánh', 'Cho Tôi Xin Một Vé Đi Tuổi Thơ', '64000.00', 22, '', '0.00', '2023-06-28 15:16:13');
+(45, 'Cho Tôi Xin Một Vé Đi Tuổi Thơ', 'Nguyễn Nhật Ánh', 'Cho Tôi Xin Một Vé Đi Tuổi Thơ', '64000.00', 22, '', '0.00', '2023-06-28 15:16:13'),
+(46, 'Nghĩ và làm giàu', 'Napoleon Hill', 'Nghĩ và làm giàu', '143000.00', 22, '', '0.00', '2023-07-07 10:22:50'),
+(47, 'Ngàn Mặt Trời Rực Rỡ (Tái Bản 2019)', 'Khaled Hosseini', 'Ngàn Mặt Trời Rực Rỡ (Tái Bản 2019)', '104000.00', 22, '', '0.00', '2023-07-09 10:11:36'),
+(48, 'Làm Bạn Với Bầu Trời - Tặng Kèm Khung Hình Xinh Xắn', 'Nguyễn Nhật Ánh', 'Làm Bạn Với Bầu Trời - Tặng Kèm Khung Hình Xinh Xắn', '88000.00', 22, '', '0.00', '2023-07-09 10:12:55'),
+(49, 'Quân Khu Nam Đồng (Tái Bản 2018)', 'Bình ca', 'Quân Khu Nam Đồng (Tái Bản 2018)', '102000.00', 22, '', '0.00', '2023-07-09 10:13:56');
 
 -- --------------------------------------------------------
 
@@ -81,7 +85,6 @@ CREATE TABLE `books_images` (
 
 INSERT INTO `books_images` (`ID`, `BookID`, `ImageURL`) VALUES
 (61, 24, '../uploads/tt1.jpg'),
-(62, 25, '../uploads/tt2.jpg'),
 (63, 26, '../uploads/tt3.jpg'),
 (65, 28, '../uploads/tt5.jpg'),
 (66, 29, '../uploads/tt6.jpg'),
@@ -97,7 +100,12 @@ INSERT INTO `books_images` (`ID`, `BookID`, `ImageURL`) VALUES
 (79, 42, '../uploads/vh.jpg'),
 (80, 43, '../uploads/vh1.jpg'),
 (81, 44, '../uploads/vh2.jpg'),
-(82, 45, '../uploads/tt4.jpg');
+(82, 45, '../uploads/tt4.jpg'),
+(83, 25, '../uploads/nha-gia-kim.png'),
+(84, 46, '../uploads/suynghivalamgiau.png'),
+(85, 47, '../uploads/tt9.jpg'),
+(86, 48, '../uploads/tt10.jpg'),
+(87, 49, '../uploads/tt11.jpg');
 
 -- --------------------------------------------------------
 
@@ -179,7 +187,8 @@ INSERT INTO `orders` (`ID`, `UserID`, `OrderDate`, `TotalPrice`, `Status`, `Cust
 (33, 2, NULL, '215000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '09999999999', 'ntgiang01012023@gmail.com'),
 (34, 4, NULL, '35000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '0999999999', 'ntgiang01012023@gmail.com'),
 (35, 5, NULL, '68000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '09999999999', 'ntgiang01012023@gmail.com'),
-(36, 2, NULL, '68000.00', 'Pending', 'd d', 'e', 'e', 'ntgiang01012023@gmail.com');
+(36, 2, NULL, '68000.00', 'Pending', 'd d', 'e', 'e', 'ntgiang01012023@gmail.com'),
+(37, 2, NULL, '280000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '09999999999', 'ntgiang01012023@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -233,7 +242,8 @@ INSERT INTO `order_items` (`ID`, `OrderID`, `BookID`, `BookTitle`, `BookPrice`, 
 (37, 33, 29, 'Totto-Chan Bên Cửa Sổ (Tái Bản 2019)', '39000.00', 1),
 (39, 34, 25, 'Nhà Giả Kim (Tái Bản 2020)', '35000.00', 1),
 (40, 35, 26, 'Tôi Là Bêtô (Tái Bản 2018)', '68000.00', 1),
-(41, 36, 26, 'Tôi Là Bêtô (Tái Bản 2018)', '68000.00', 1);
+(41, 36, 26, 'Tôi Là Bêtô (Tái Bản 2018)', '68000.00', 1),
+(42, 37, 25, 'Nhà Giả Kim (Tái Bản 2020)', '35000.00', 8);
 
 -- --------------------------------------------------------
 
@@ -361,13 +371,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `books`
 --
 ALTER TABLE `books`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT cho bảng `books_images`
 --
 ALTER TABLE `books_images`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 
 --
 -- AUTO_INCREMENT cho bảng `categories`
@@ -379,13 +389,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT cho bảng `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT cho bảng `payments`
