@@ -43,6 +43,7 @@ require_once '../PHPMailer-master/src/SMTP.php';
                         <li><a href="">|<i class="fa-solid fa-bag-shopping"></i>Cửa hàng</a></li>
                         <?php
                         session_start();
+                        require_once "../config/config.php";
                         if(isset($_SESSION['username'])){?>
                         <li><a href="my_account.php">|<i class="fa-solid fa-user"></i>Tài khoản</a>
                             <?php } else{?>
