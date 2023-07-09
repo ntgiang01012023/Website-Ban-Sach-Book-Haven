@@ -146,10 +146,17 @@ if ($result->num_rows > 0) {
                     </form>
                 </div>
                 <div class="main-contact">
-                    <a href="" class="tooltip" data-tooltip="Compare"><i class="fa-solid fa-code-compare"></i></a>
+                    <form method="post" action="compare.php">
+                        <button type="submit" name="compare" class="tooltip" data-tooltip="So sánh"
+                            style="border:none; background-color: transparent; cursor: pointer;"><i
+                                class="fa-solid fa-code-compare"></i></button>
+                    </form>
                     <div class="triangle"></div>
-                    <a href="" class="tooltip" data-tooltip="Wishlist"><i class="fa-regular fa-heart"></i></a>
-                    <?php
+                    <form method="post" action="wishlist.php">
+                        <button type="submit" name="wishlist" class="tooltip" data-tooltip="Yêu thích"
+                            style="border:none; background-color: transparent; cursor: pointer;"><i
+                                class="fa-regular fa-heart"></i></button>
+                    </form> <?php
                         if(isset($_SESSION['username'])){?>
                     <button id="dropdown-account-active" onclick="showMenuAccount()"><i
                             class="fa-regular fa-user"></i></button>

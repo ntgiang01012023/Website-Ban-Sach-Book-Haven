@@ -505,9 +505,22 @@ if ($result->num_rows > 0) {
                                     class="fa-solid fa-arrow-right"></i></a>
                         </div>
                         <div class="b-d-c-b-l-c-wishlist-center">
-                            <div class="b-d-c-b-l-c-wishlist-all-center">
-                                <a href=""><i class="fa-regular fa-heart"></i>Wishlist</a>
-                                <a href=""><i class="fa-solid fa-code-compare"></i>Compare</a>
+                            <div class="b-d-c-b-l-c-wishlist-all">
+                                <!-- Trong wishlist.php -->
+                                <form method="post" action="wishlist.php">
+                                    <button class="wishlist" type="submit" name="wishlist"
+                                        value="<?php echo $row['ID']; ?>"><i
+                                            class="fa-regular fa-heart"></i>Wishlist</button>
+                                    <!-- ... -->
+                                </form>
+
+                                <!-- Trong compare.php -->
+                                <form method="POST" action="compare.php">
+                                    <button class="compare" type="submit" name="compare"
+                                        value="<?php echo $row['ID']; ?>"><i
+                                            class="fa-solid fa-code-compare"></i>Compare</button>
+                                    <!-- ... -->
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -555,8 +568,21 @@ if ($result->num_rows > 0) {
                         </div>
                         <div class="b-d-c-b-l-c-wishlist">
                             <div class="b-d-c-b-l-c-wishlist-all">
-                                <a href=""><i class="fa-regular fa-heart"></i>Wishlist</a>
-                                <a href=""><i class="fa-solid fa-code-compare"></i>Compare</a>
+                                <!-- Trong wishlist.php -->
+                                <form method="post" action="wishlist.php">
+                                    <button class="wishlist" type="submit" name="wishlist"
+                                        value="<?php echo $row['ID']; ?>"><i
+                                            class="fa-regular fa-heart"></i>Wishlist</button>
+                                    <!-- ... -->
+                                </form>
+
+                                <!-- Trong compare.php -->
+                                <form method="POST" action="compare.php">
+                                    <button class="compare" type="submit" name="compare"
+                                        value="<?php echo $row['ID']; ?>"><i
+                                            class="fa-solid fa-code-compare"></i>Compare</button>
+                                    <!-- ... -->
+                                </form>
                             </div>
                         </div>
                     </div>
