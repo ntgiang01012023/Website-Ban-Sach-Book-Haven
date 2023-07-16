@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 09, 2023 lúc 05:17 AM
+-- Thời gian đã tạo: Th7 16, 2023 lúc 05:35 PM
 -- Phiên bản máy phục vụ: 10.4.27-MariaDB
 -- Phiên bản PHP: 8.2.0
 
@@ -188,7 +188,9 @@ INSERT INTO `orders` (`ID`, `UserID`, `OrderDate`, `TotalPrice`, `Status`, `Cust
 (34, 4, NULL, '35000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '0999999999', 'ntgiang01012023@gmail.com'),
 (35, 5, NULL, '68000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '09999999999', 'ntgiang01012023@gmail.com'),
 (36, 2, NULL, '68000.00', 'Pending', 'd d', 'e', 'e', 'ntgiang01012023@gmail.com'),
-(37, 2, NULL, '280000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '09999999999', 'ntgiang01012023@gmail.com');
+(37, 2, NULL, '280000.00', 'Pending', 'Nguyễn Giang', 'Cần Thơ', '09999999999', 'ntgiang01012023@gmail.com'),
+(38, 2, NULL, '35000.00', 'Pending', ' ', '', '', ''),
+(39, 2, NULL, '35000.00', 'Pending', 's s', 's', 's', 'ntgiang01012023@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -243,7 +245,9 @@ INSERT INTO `order_items` (`ID`, `OrderID`, `BookID`, `BookTitle`, `BookPrice`, 
 (39, 34, 25, 'Nhà Giả Kim (Tái Bản 2020)', '35000.00', 1),
 (40, 35, 26, 'Tôi Là Bêtô (Tái Bản 2018)', '68000.00', 1),
 (41, 36, 26, 'Tôi Là Bêtô (Tái Bản 2018)', '68000.00', 1),
-(42, 37, 25, 'Nhà Giả Kim (Tái Bản 2020)', '35000.00', 8);
+(42, 37, 25, 'Nhà Giả Kim (Tái Bản 2020)', '35000.00', 8),
+(43, 38, 25, 'Nhà Giả Kim (Tái Bản 2020)', '35000.00', 1),
+(44, 39, 25, 'Nhà Giả Kim (Tái Bản 2020)', '35000.00', 1);
 
 -- --------------------------------------------------------
 
@@ -300,7 +304,8 @@ INSERT INTO `users` (`ID`, `Username`, `Password`, `Email`, `FullName`, `Address
 (4, 'giang1', '123', 'giang1@gmail.com', '', '', '', 'user'),
 (5, 'test', '123', 'test@gmail.com', '', '', '', 'user'),
 (6, 'test1', '123', 'test1@gmail.com', '', '', '', 'user'),
-(7, 'test2', '123', 'test2@gmail.com', '', '', '', 'user');
+(7, 'test2', '123', 'test2@gmail.com', '', '', '', 'user'),
+(8, 'giang3', 'giang3', 'ntgiang01012023@gmail.com', '', '', '', 'user');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -389,13 +394,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT cho bảng `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT cho bảng `payments`
@@ -413,7 +418,7 @@ ALTER TABLE `purchasehistory`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
