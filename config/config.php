@@ -3,7 +3,7 @@
 $host = 'localhost';
 $username = 'root';
 $password = '';
-$dbname = 'book_haven';
+$dbname = '';
 
 // Kết nối đến cơ sở dữ liệu
 $conn = mysqli_connect($host, $username, $password, $dbname);
