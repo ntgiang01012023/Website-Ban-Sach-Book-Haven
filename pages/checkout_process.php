@@ -236,14 +236,14 @@ if (isset($_POST['checkout'])) {
                 $mail->isSMTP(); // Sử dụng SMTP
                 $mail->Host = 'smtp.gmail.com'; // Địa chỉ SMTP server
                 $mail->SMTPAuth = true; // Bật chế độ xác thực SMTP
-                $mail->Username = 'dck28012001@gmail.com'; // Tên đăng nhập SMTP
+                $mail->Username = ''; // Tên đăng nhập SMTP
                 $mail->Password = 'gwnvemyltwgineia'; // Mật khẩu đăng nhập SMTP
                 $mail->SMTPSecure = 'tls'; // Giao thức bảo mật
                 $mail->Port = 587; // Cổng SMTP
 
                 // Cấu hình email
                 $mail->CharSet = 'UTF-8';
-                $mail->setFrom('dck28012001@gmail.com', 'Book Haven'); // Địa chỉ email và tên người gửi
+                $mail->setFrom('', 'Book Haven'); // Địa chỉ email và tên người gửi
                 $mail->addAddress($email, $fname . ' ' . $lname); // Địa chỉ email và tên người nhận
                 $mail->isHTML(true); // Gửi email dạng HTML
                 $mail->Subject = 'Xác nhận đơn hàng từ Book Haven'; // Tiêu đề email
